@@ -480,8 +480,7 @@ POSTS ARCHIVE
 	font-size: 2rem;
 }
 .archive .page-title span {
-	font-style: italic;
-	color: #6f6f6f;
+	color: #444;
 }
 /*
 ============================
@@ -495,6 +494,18 @@ POSTS ARCHIVE
 }
 .widget .wp-block-group__inner-container {
 	padding: 0;
+}
+.site-main .widget {
+	padding: 0;
+	padding-bottom: var(--padding);
+}
+/*
+============================
+ SEARCH
+===============================
+*/
+.error-404 .search-form {
+	padding-bottom: var(--padding);
 }
 /*
 ============================
