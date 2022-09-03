@@ -1,0 +1,56 @@
+.happyforms-part__label-container {
+	margin-bottom: .25rem;
+}
+.happyforms-input {
+	margin-bottom: 1rem;
+}
+
+.happyforms-input input,
+.happyforms-part__el textarea {
+	width: 100%;
+	padding: .65rem;
+	border: 1px solid #c3ccc4;
+	border-radius: 5px;
+	font-size: var(--moonranger-variable-font-size-regular);
+	font-family: inherit;
+}
+.happyforms-custom-select-dropdown {
+	display: none;
+}
+.happyforms-styles :placeholder {
+	color: #6f6f6f;
+}
+.happyforms-part-error-notice p {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	color: red;
+}
+.happyforms-part-error-notice svg {
+	width: 32px;
+}
+.option-label .label {
+	display: inline-block;
+}
+.checkmark {
+	display: none;
+}
+.happyforms-flex {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.happyforms-part--submit {
+	flex: 1 1 100%;
+}
+.happyforms-part--width-full {
+	flex: 1 1 100%;
+}
+.happyforms-part--width-half {
+	flex: 1 1 calc(50% - 1rem);
+}
+@media screen and (max-width: 420px) {
+	.happyforms-part--width-half {
+		flex: 1 1 100%;
+	}
+}
