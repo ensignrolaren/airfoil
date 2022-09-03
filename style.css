@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Radical Advantage Digital
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.0.0
+Version: 1.0.1
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -235,9 +235,7 @@ GLOBAL LAYOUT
 	width: calc(100vw - (var(--scroll-bar, 15px))) !important;
 	margin-left: calc(50% - 50vw + (var(--scroll-bar, 15px) / 2)) !important;
 }
-
 /* wide children will break out, but not quite full-width */
-
 .site-header > *,
 .site-footer > * {
 	margin-left: calc(25% - 25vw) !important;
@@ -266,7 +264,7 @@ GLOBAL LAYOUT
 	margin-left: calc(25% - 25vw + (var(--padding) / 2) + (var(--scroll-bar) / 4)) !important;
 	margin-right: calc(25% - 25vw + (var(--padding) / 2) + (var(--scroll-bar) / 4)) !important;
 }
-/* padding for all top-level elements */
+/* horizontal padding for all top-level elements */
 .site-header > *,
 .site-main > *,
 .site-footer > * {
