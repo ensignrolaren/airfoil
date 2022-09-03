@@ -25,23 +25,25 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'rad' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-header__inner-container">
-			<div class="site-branding">
-				<?php rad_site_branding(); ?>
-			</div><!-- .site-branding -->
-	
-			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rad' ); ?></button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					)
-				);
-				?>
-			</nav><!-- #site-navigation -->
-		</div>
-	</header><!-- #masthead -->
+	<div class="site-header-wrapper" >
+		<header id="masthead" class="site-header">
+			<div class="site-header__inner-container">
+				<div class="site-branding">
+					<?php rad_site_branding(); ?>
+				</div><!-- .site-branding -->
+		
+				<nav id="site-navigation" class="main-navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rad' ); ?></button>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+					?>
+				</nav><!-- #site-navigation -->
+			</div>
+		</header>
+	</div><!-- #masthead -->
 <?php theme_colors(); ?>
