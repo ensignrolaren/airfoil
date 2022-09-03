@@ -34,5 +34,7 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+if (get_field('show_page_sidebar') == 1) :
+	get_sidebar();
+endif;
 get_footer();
