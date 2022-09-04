@@ -365,6 +365,16 @@ BLOCKS
 	padding-top: 0;
 	padding-bottom: 0;
 }
+/* columns */
+.wp-block-column.has-background > figure {
+	margin: 0;
+}
+.wp-block-column.has-background p:last-of-type {
+	margin-bottom: 0;
+}
+.wp-block-column.has-background > *:not(figure) {
+	padding: var(--padding);
+}
 /* media & text block */
 .wp-block-media-text {
 	gap: 2rem;

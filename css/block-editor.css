@@ -198,6 +198,21 @@ body .wp-block-button.alignright {
 }
 /*
 +++++++++++++++++++
+BLOCKS
++++++++++++++++++++
+*/
+/* columns */
+.wp-block-column.has-background > figure {
+	margin: 0;
+}
+.wp-block-column.has-background p:last-of-type {
+	margin-bottom: 0;
+}
+.wp-block-column.has-background > *:not(figure) {
+	padding: var(--padding);
+}
+/*
++++++++++++++++++++
 QUOTES
 +++++++++++++++++++
 */
