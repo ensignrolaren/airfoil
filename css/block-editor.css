@@ -206,11 +206,11 @@ BLOCKS
 	margin: 0;
 }
 .wp-block-column.has-background > *:not(figure) {
-	padding-left: var(--padding);
-	padding-right: var(--padding);
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 .wp-block-column.has-background > * {
-	padding-bottom: var(--padding);
+	padding-bottom: 2rem;
 }
 .wp-block-column.has-background > h1,
 .wp-block-column.has-background > h2,
