@@ -205,11 +205,23 @@ BLOCKS
 .wp-block-column.has-background > figure {
 	margin: 0;
 }
+.wp-block-column.has-background > *:not(figure) {
+	padding-left: var(--padding);
+	padding-right: var(--padding);
+}
+.wp-block-column.has-background > * {
+	padding-bottom: var(--padding);
+}
+.wp-block-column.has-background > h1,
+.wp-block-column.has-background > h2,
+.wp-block-column.has-background > h3,
+.wp-block-column.has-background > h4,
+.wp-block-column.has-background > h5,
+.wp-block-column.has-background > h6 {
+	padding-bottom: 0;
+}
 .wp-block-column.has-background p:last-of-type {
 	margin-bottom: 0;
-}
-.wp-block-column.has-background > *:not(figure) {
-	padding: var(--padding, 2rem);
 }
 /*
 +++++++++++++++++++

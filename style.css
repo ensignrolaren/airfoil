@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Radical Advantage Digital
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.0.2
+Version: 1.0.3
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -369,11 +369,23 @@ BLOCKS
 .wp-block-column.has-background > figure {
 	margin: 0;
 }
+.wp-block-column.has-background > *:not(figure) {
+	padding-left: var(--padding);
+	padding-right: var(--padding);
+}
+.wp-block-column.has-background > * {
+	padding-bottom: var(--padding);
+}
+.wp-block-column.has-background > h1,
+.wp-block-column.has-background > h2,
+.wp-block-column.has-background > h3,
+.wp-block-column.has-background > h4,
+.wp-block-column.has-background > h5,
+.wp-block-column.has-background > h6 {
+	padding-bottom: 0;
+}
 .wp-block-column.has-background p:last-of-type {
 	margin-bottom: 0;
-}
-.wp-block-column.has-background > *:not(figure) {
-	padding: var(--padding);
 }
 /* media & text block */
 .wp-block-media-text {
