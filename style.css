@@ -337,6 +337,7 @@ BLOCKS
 	border: 0;
 	margin-top: 3rem;
 	margin-bottom: 3rem;
+	margin-left: 0;
 	background: #343434;
 	height: 3px;
 	max-width: 15%;
@@ -345,6 +346,17 @@ BLOCKS
 .wp-block-separator.is-style-centered {
 	margin-left: auto;
 	margin-right: auto;
+}
+.wp-block-separator.is-style-spacer {
+	background: none transparent;
+	max-width: unset;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-block-separator.is-style-small-spacer {
+	background: none transparent;
+	max-width: unset;
+	margin: 1.5rem auto;
 }
 /* group block */
 /* large padding is the default for the group block */
