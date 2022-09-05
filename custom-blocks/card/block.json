@@ -1,0 +1,30 @@
+{
+    "name": "rad/card",
+    "title": "Card",
+    "description": "An image plus additional block(s)",
+    "style": "",
+    "script": "",
+    "category": "radical",
+    "icon": "carrot",
+    "apiVersion": 2,
+    "keywords": [],
+    "acf": {
+        "mode": "edit",
+	"renderTemplate": "render.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": true,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

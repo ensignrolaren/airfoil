@@ -13,13 +13,20 @@ function add_acf_json_load_folder( $paths ) {
 }
 // Don't export dynamic values via Local JSON
 // add_filter('acf/prepare_field_for_export', function($field) {
-	// check field key against an array of field values to see if we're in the right field
-	// if(isset($field['key']) && in_array($field['key'], array(
-		// 'FIELD_ID_GOES_HERE',
-		// 'FIELD_ID_GOES_HERE'
-	// ))) {
-		//Blank out the select options with an empty array
+// check field key against an array of field values to see if we're in the right field
+// if(isset($field['key']) && in_array($field['key'], array(
+// 'FIELD_ID_GOES_HERE',
+// 'FIELD_ID_GOES_HERE'
+// ))) {
+//Blank out the select options with an empty array
 // 		$field['choices'] = array();
 // 	}
 // 	return $field;
 // });
+
+
+// Register custom blocks
+function radical_load_blocks() {
+	register_block_type(get_template_directory() . '/custom-blocks/card/block.json');
+}
+add_action('init', 'radical_load_blocks');
