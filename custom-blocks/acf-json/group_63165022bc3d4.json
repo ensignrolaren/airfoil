@@ -1,12 +1,12 @@
 {
-    "key": "group_63163560bca1a",
-    "title": "Block: Card",
+    "key": "group_63165022bc3d4",
+    "title": "Test",
     "fields": [
         {
-            "key": "field_63163561a73bf",
-            "label": "Image",
-            "name": "image",
-            "type": "image",
+            "key": "field_631650233a256",
+            "label": "Test",
+            "name": "test",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,16 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -32,7 +27,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "rad\/card"
+                "value": "acf\/all-fields-block"
             }
         ]
     ],
@@ -45,5 +40,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662426704
+    "modified": 1662406771
 }

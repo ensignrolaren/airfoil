@@ -27,6 +27,9 @@ function add_acf_json_load_folder( $paths ) {
 
 // Register custom blocks
 function radical_load_blocks() {
+	// Card
 	register_block_type(get_template_directory() . '/custom-blocks/card/block.json');
+	// Test
+	register_block_type(get_template_directory() . '/custom-blocks/test/block.json');
 }
 add_action('init', 'radical_load_blocks');
