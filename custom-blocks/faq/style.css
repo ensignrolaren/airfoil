@@ -1,0 +1,36 @@
+/* it's nice to visually indicate that the item is clickable */
+.rad-faq__faq {
+	/* border-bottom: 1px solid #ebebeb; */
+	padding: 1rem 0;
+}
+.rad-faq__faq .rad-faq__question { 
+	cursor: pointer;
+	list-style: none;/* we will replace the triangle marker with a plus sign via the ::after pseudo, below */
+	display: flex;
+	align-items: center;
+}
+.rad-faq__faq > .rad-faq__question::-webkit-details-marker {
+	display: none;
+}
+.rad-faq__faq + .rad-faq__faq {
+	margin-top: .5rem;
+}
+.rad-faq__faq .rad-faq__question::after { 
+	content: url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M251.82 465.68a23.35 23.35 0 0 0 16.508 6.844 23.336 23.336 0 0 0 16.508-6.844l169.17-169.17c4.383-4.375 6.844-10.316 6.844-16.508s-2.461-12.133-6.844-16.508l-169.17-169.17a23.348 23.348 0 0 0-22.551-6.043 23.356 23.356 0 0 0-16.508 16.508 23.348 23.348 0 0 0 6.043 22.551L404.48 280 251.82 432.66a23.336 23.336 0 0 0-6.844 16.508 23.35 23.35 0 0 0 6.844 16.508z'/%3E%3C/svg%3E%0A");
+	height: 30px;
+	width: 30px;
+	position: relative; 
+	top: 3px;
+	flex: 0 0 30px; /*the question mark should be no wider than it needs to be and hug the right hand side */
+	margin-left: 1rem;
+	transition: transform 250ms ease-in-out, color 250ms ease-in-out;
+	line-height: 1;
+}
+.rad-faq__faq[open] .rad-faq__question::after {
+	transform: rotate(0.25turn);
+	transform-origin: center;
+}
+.rad-faq__answer {
+	padding-top: 1rem;
+	/* animation: sweep 250ms ease-in-out; */
+}
