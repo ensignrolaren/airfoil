@@ -301,6 +301,9 @@ SITE HEADER
 /* -----------------------------
  site branding
 ------------------------------*/
+.site-title {
+	margin-bottom: unset;
+}
 .custom-logo-link {
 	font-size: 0;
 }
