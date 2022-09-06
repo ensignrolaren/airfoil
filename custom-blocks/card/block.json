@@ -7,7 +7,11 @@
 	"category": "radical",
 	"icon": "carrot",
 	"apiVersion": 2,
-	"keywords": [],
+	"keywords": [
+		"card",
+		"media",
+		"text"
+	],
 	"acf": {
 		"mode": "edit",
 	"renderTemplate": "render.php"
@@ -22,7 +26,7 @@
 			"background": true,
 			"link": false
 		},
-		"alignText": false,
+		"alignText": true,
 		"fullHeight": false
 	},
 	"attributes": {
