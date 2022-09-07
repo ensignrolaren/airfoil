@@ -28,6 +28,9 @@ html {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+.edit-link {
+	display: none;
+}
 body.has-scrollbar {
 	overflow-x: hidden;
 }
