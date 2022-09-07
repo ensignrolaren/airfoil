@@ -56,9 +56,6 @@ require get_template_directory() . '/inc/template-functions.php';
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
 
-// Add custom color palette to block editor and ACF fields
-require_once get_template_directory() . '/inc/theme-colors.php';
-
 // Get theme options
 require_once get_template_directory() . '/inc/theme-options.php';
 
@@ -72,26 +69,4 @@ require get_template_directory() . '/inc/widgets.php';
 if (class_exists('Woocommerce')) {
 	// if active, load Woocommerce functions
 	require_once get_template_directory() . '/inc/woocommerce.php';
-}
-
-function theme_colors() {
-	// Check rows exists.
-	if (have_rows('colors')) :
-
-		// Loop through rows.
-		while (have_rows('colors', 'option')) : the_row();
-
-			// Load sub field value.
-			$color_value = get_sub_field('color', 'option');
-			$color_name = get_sub_field('name', 'option');
-			// Do something...
-				echo $color_value;
-				echo $color_name;
-		// End loop.
-		endwhile;
-
-	// No value.
-	else :
-	// Do something...
-	endif;
 }

@@ -25,7 +25,6 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
-		<?php radical_guten_colors(); ?>
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'rad'); ?></a>
 
 		<div class="site-header-wrapper">
@@ -49,4 +48,3 @@
 				</div>
 			</header>
 		</div><!-- #masthead -->
-		<?php theme_colors(); ?>
