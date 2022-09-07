@@ -33,5 +33,7 @@ function radical_load_blocks() {
 	register_block_type(get_template_directory() . '/custom-blocks/testimonial/block.json');
 	// FAQ
 	register_block_type(get_template_directory() . '/custom-blocks/faq/block.json');
+	// copyright
+	register_block_type(get_template_directory() . '/custom-blocks/copyright/block.json');
 }
 add_action('init', 'radical_load_blocks');
