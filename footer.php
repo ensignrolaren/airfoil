@@ -15,6 +15,9 @@
 	<div class="site-footer-wrapper">
 		<?php dynamic_sidebar('footer-blocks-area'); ?>
 	</div>
+	<div class="site-credits-wrapper">
+		<?php dynamic_sidebar('site-credits-block-area'); ?>
+	</div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

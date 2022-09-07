@@ -219,7 +219,8 @@ GLOBAL LAYOUT
 .site-main,
 .wp-block-group__inner-container,
 .wp-block-cover__inner-container,
-.site-footer {
+.site-footer,
+.site-credits {
 	max-width: var(--normal-width);
 	margin-left: auto;
 	margin-right: auto;
@@ -267,7 +268,8 @@ GLOBAL LAYOUT
 /* horizontal padding for all top-level elements */
 .site-header > *,
 .site-main > *,
-.site-footer > * {
+.site-footer > *,
+.site-credits > * {
 	padding-left: var(--padding);
 	padding-right: var(--padding);
 }
@@ -310,9 +312,167 @@ SITE HEADER
 /* -----------------------------
 site navigation
 ------------------------------*/
-.site-header ul {
+/* -----------------------------
+site navigation
+------------------------------*/
+.menu {
+	margin: 0;
+}
+.main-navigation {
+	display: flex;
+	justify-content: flex-end;
+	font-weight: bold;
+}
+.main-navigation > ul {
 	list-style-type: none;
 	margin: 0;
+	padding: 0;
+	display: flex;
+}
+.main-navigation ul li {
+	padding: 0;
+	display: inline-block;
+	position: relative;
+}
+.main-navigation ul li a {
+	text-decoration: none;
+	line-height: 1;
+	padding: 1em clamp(0.47rem, calc(0.47rem + ((1vw - 0.48rem) * 0.7361)), 1rem);
+	display: inline-block;
+}
+.main-navigation .sub-menu .menu-item {
+	display: block;
+	position: relative;
+}
+.main-navigation .menu-item-has-children ul a {
+	display: inline-block;
+}
+@media screen and (min-width: 768px) { /* Applies ONLY to large screens */
+	.main-navigation .non-clickable > a {
+		pointer-events: none;
+	}
+	.main-navigation .non-clickable:hover > a {
+		color: #817e73;
+		transition: color 100ms ease;
+	}
+	.main-navigation .menu-item-has-children > a:after {
+		content: " ›";
+		transform: rotate(90deg);
+		transition: transform 250ms ease;
+		display: inline-block;
+		position: relative;
+		top: 2px;
+		left: .75ch;
+	}
+	.main-navigation .sub-menu li a:after {
+		display: none; 
+	}
+	.main-navigation .sub-menu {
+		display: none;
+		background-color: #fff;
+		width: 220px;
+		position: absolute;
+		top: 3em;
+		left: 0;
+		z-index: 9999;
+		-webkit-box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
+		box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
+		border-bottom: 4px solid #111c35;
+		margin: 0;
+	}
+	.main-navigation .menu-item-has-children:hover .sub-menu {
+		display: block;
+	}
+}
+ /* responsive/mobile menu stuff */
+button.menu-toggle {
+	display: none;
+	color: #fff;
+	text-shadow: none;
+	cursor: pointer;
+	text-decoration: none;
+	padding: .5rem;
+	border-radius: 0;
+	position: relative;
+	line-height: 1;
+	background: #101010;
+	border: none;
+	font-size: 100%;
+	appearance: none;
+}
+#close {
+	display: none;
+}
+@media screen and (max-width: 768px) {
+	.js  .main-navigation {
+		justify-content: center;
+	}
+	.js #close {
+		text-transform: uppercase;
+		display: block;
+		padding: 0;
+		width: 100%;
+		font-size: 100%;
+		text-align: right;
+		background: none transparent;
+		border: none;
+		border-radius: 0;
+		cursor: pointer;
+	}
+	.close-symbol {
+		position: relative;
+	}
+	.js button.menu-toggle {
+		display: block;
+	}
+	.js .main-navigation {
+		display: flex;
+		justify-content: flex-end;
+	}
+	.js .main-navigation > div:first-of-type /*this should always be the primary nav */ {
+		display: block;
+		background-color: #fff;
+		position: absolute;
+		left: -300px;
+		top: 0;
+		width: 300px;
+		height: 100vh;
+		transition: all 300ms ease-in-out;
+		z-index: 999;
+		padding: 1rem;
+		justify-content: unset;
+	}
+	.main-navigation .sub-menu .menu-item {
+		font-size: 1rem;
+	}
+	.js .main-navigation .menu .menu-item {
+		padding: 0;
+		display: block;
+	}
+	.js .main-navigation .menu .menu-item a {
+		border-bottom: 1px solid #e3e3e3;
+	}
+	.js .main-navigation .sub-menu {
+		padding: 0;
+		margin: 0;
+	}
+	.js .main-navigation .non-clickable {
+		padding: 0;
+	}
+	.js .main-navigation .menu .menu-item.non-clickable > a {
+		border-bottom: none;
+	}
+	.js .main-navigation .menu .menu-item a {
+		display: block;
+	}
+
+	/* when the button's clicked */
+	.main-navigation.toggled > div:first-of-type /*this should always be the primary nav */ {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 80%;
+	}
 }
 @media screen and (max-width: 1024px) {
 	
@@ -329,6 +489,10 @@ SITE FOOTER
 ################################
 */
 /* site footer */
+.site-footer :last-child,
+.site-credits :last-child {
+	margin-bottom: 0;
+}
 /* site credits */
 /*
 ===============================
@@ -379,7 +543,13 @@ BLOCKS
 	padding-top: 0;
 	padding-bottom: 0;
 }
+.wp-block-cover__inner-container :last-child {
+	margin-bottom: 0;
+}
 /* columns */
+.wp-block-columns {
+	margin-bottom: 0;
+}
 .wp-block-column.has-background > figure {
 	margin: 0;
 }
