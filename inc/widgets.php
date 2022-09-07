@@ -40,8 +40,8 @@ function site_credits() {
 			'description'		=> esc_html__('This area displays below the footer and typically shows the site credits.', 'rad'),
 			'before_sidebar'	=> '<div class="site-credits">',
 			'after_sidebar'		=> '</div>',
-			'before_widget'		=> '<div class="site-credits__inner-container">',
-			'after_widget'		=> '</div>'
+			'before_widget'		=> '<span class="site-credits__block">',
+			'after_widget'		=> '</span>'
 		)
 	);
 }
