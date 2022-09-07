@@ -1,11 +1,9 @@
-/* it's nice to visually indicate that the item is clickable */
 .rad-faq__faq {
-	/* border-bottom: 1px solid #ebebeb; */
 	padding: 1rem 0;
 }
 .rad-faq__faq .rad-faq__question { 
 	cursor: pointer;
-	list-style: none;/* we will replace the triangle marker with a plus sign via the ::after pseudo, below */
+	list-style: none;
 	display: flex;
 	align-items: center;
 }
@@ -21,7 +19,7 @@
 	width: 30px;
 	position: relative; 
 	top: 3px;
-	flex: 0 0 30px; /*the question mark should be no wider than it needs to be and hug the right hand side */
+	flex: 0 0 30px;
 	margin-left: 1rem;
 	transition: transform 250ms ease-in-out, color 250ms ease-in-out;
 	line-height: 1;
@@ -32,5 +30,4 @@
 }
 .rad-faq__answer {
 	padding-top: 1rem;
-	/* animation: sweep 250ms ease-in-out; */
 }
