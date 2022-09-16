@@ -546,7 +546,7 @@ BLOCKS
 	padding-top: 0;
 	padding-bottom: 0;
 }
-.wp-block-cover__inner-container :last-child {
+.wp-block-cover__inner-container :last-child:not(.wp-block-separator) {
 	margin-bottom: 0;
 }
 /* columns */
