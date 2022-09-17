@@ -218,8 +218,8 @@ GLOBAL LAYOUT
 */
 /* constrain all parent elements to a reasonable width */
 .site-header,
-.widget-area,
-.site-main,
+:not(.has-sidebar) > .site > .widget-area,
+:not(.has-sidebar) > .site > .site-main,
 .wp-block-group__inner-container,
 .wp-block-cover__inner-container,
 .site-footer,
@@ -245,14 +245,14 @@ GLOBAL LAYOUT
 	margin-left: calc(25% - 25vw) !important;
 	margin-right: calc(25% - 25vw) !important;
 }
-.alignwide {
-	margin-left: calc(25% - 25vw + (var(--padding) / 2)) !important;
-	margin-right: calc(25% - 25vw + (var(--padding) / 2)) !important;
-}
 .has-scrollbar .site-header > *,
 .has-scrollbar .site-footer > * {
 	margin-left: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
 	margin-right: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
+}
+.alignwide {
+	margin-left: calc(25% - 25vw + (var(--padding) / 2)) !important;
+	margin-right: calc(25% - 25vw + (var(--padding) / 2)) !important;
 }
 .has-scrollbar .alignwide {
 	margin-left: calc(25% - 25vw + (var(--padding) / 2) + calc( var(--scroll-bar) / 4)) !important;
@@ -287,6 +287,35 @@ GLOBAL LAYOUT
 }
 :not(.wp-block-button).alignright {
 	float: right;
+}
+/* sidebar layout */
+.has-sidebar .alignfull,
+.has-sidebar .alignwide,
+.has-sidebar.has-scrollbar .alignfull,
+.has-sidebar.has-scrollbar .alignwide {
+	max-width: 100%;
+	width: 100% !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.sidebar-wrapper {
+    max-width: var(--normal-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+.sidebar-wrapper__inner-container {
+	margin-left: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
+    margin-right: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
+	display: flex;
+	flex-wrap: wrap;
+}
+.sidebar-wrapper .site-main {
+	flex-basis: 0;
+	flex-grow: 999;
+}
+.sidebar-wrapper .widget-area {
+	flex-basis: 20rem;
+	flex-grow: 1;
 }
 /*
 ################################
