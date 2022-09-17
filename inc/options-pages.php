@@ -7,6 +7,11 @@ function rad_acf_options_page() {
 			'parent'     => 'options-general.php',
 			'capability' => 'manage_options'
 		));
+		acf_add_options_sub_page(array(
+			'title'      => 'Posts Options',
+			'parent'     => 'edit.php',
+			'capability' => 'manage_options',
+		));
 	}
 }
 add_action('init', 'rad_acf_options_page');

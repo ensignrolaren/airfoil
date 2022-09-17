@@ -57,7 +57,7 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 // Get theme options
-require_once get_template_directory() . '/inc/theme-options.php';
+require_once get_template_directory() . '/inc/options-pages.php';
 
 // Theme setup
 require get_template_directory() . '/inc/theme-setup.php';

@@ -45,6 +45,5 @@ if (get_field('show_page_sidebar') == 1) :
 	get_sidebar();
 	echo '</div>';
 	echo '</div>';
-	echo '</div>';
 endif;
 get_footer();
