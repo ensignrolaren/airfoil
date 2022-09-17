@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Radical Advantage Digital
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.1.3
+Version: 1.1.4
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -78,30 +78,27 @@ h5,
 h6 {
 	font-weight: bold;
 	line-height: 1.12;
-	margin-bottom: .7657em;
+	margin-bottom: .3657em;
 }
 h1 {
-	font-size: clamp(1.8rem, calc(1.8rem + ((1vw - 0.48rem) * 2.8472)), 3.85rem);
+	font-size: clamp(3.5rem, calc(3.5rem + ((1vw - 0.48rem) * -1.0417)), 2.75rem);
 	min-height: 0vw;
 }
 h2 {
-	font-size: clamp(1.5rem, calc(1.5rem + ((1vw - 0.48rem) * 2.0833)), 3rem);
+	font-size: clamp(2.5rem, calc(2.5rem + ((1vw - 0.48rem) * -0.6944)), 2rem);
 	min-height: 0vw;
 }
 h3 {
-	font-size: clamp(1.25rem, calc(1.4rem + ((1vw - 0.48rem) * 1.5278)), 2.25rem);
+	font-size: clamp(2rem, calc(2rem + ((1vw - 0.48rem) * -0.3472)), 1.75rem);
 	min-height: 0vw;
 }
 h4 {
-	font-size: clamp(1.15rem, calc(1.3rem + ((1vw - 0.48rem) * 1.1806)), 2.15rem);
+	font-size: clamp(1.5rem, calc(1.5rem + ((1vw - 0.48rem) * -0.2778)), 1.3rem);
 	min-height: 0vw;
 }
-h5 {
-	font-size: clamp(1rem, calc(1.2rem + ((1vw - 0.48rem) * 0.7639)), 1.75rem);
-	min-height: 0vw;
-}
+h5,
 h6 {
-	font-size: clamp(1rem, calc(1.1rem + ((1vw - 0.48rem) * 0.3472)), 1.35rem);
+	font-size: clamp(1.25rem, calc(1.25rem + ((1vw - 0.48rem) * -0.1389)), 1.15rem);
 	min-height: 0vw;
 }
 :root {
@@ -142,24 +139,10 @@ p {
 	line-height: 1.67;
 }
 /* default links */
-/* a {
+a {
 	transition: color 150ms ease-in-out;
 }
-a:link {
-	color: #104e88;
-}
-a:visited {
-	color: #663399;
-}
-a:focus {
-	color: #031e77;
-}
-a:hover {
-	color: #031e77;
-}
-a:active {
-	color: #031e77;
-} */
+
 /* default buttons */
 .wp-block-buttons {
 	margin-bottom: 1em;
@@ -522,6 +505,14 @@ button.menu-toggle {
 }
 /*
 ################################
+ SITE MAIN
+################################
+*/
+.site-main {
+	padding-top: var(--padding);
+}
+/*
+################################
 SITE FOOTER
 ################################
 */
@@ -724,17 +715,67 @@ POSTS ARCHIVE
 .archive .full article {
 	padding: var(--padding);
 }
-.archive .entry-title {
-	font-size: 2rem;
+/*
+===============================
+ SINGLE POST
+===============================
+*/
+.entry-meta {
+	margin-bottom: var(--padding);
 }
-.archive .page-title span {
-	color: #444;
+.post .entry-content h1:not(:first-child),
+.post .entry-content h2:not(:first-child),
+.post .entry-content h3:not(:first-child),
+.post .entry-content h4:not(:first-child),
+.post .entry-content h5:not(:first-child),
+.post .entry-content h6:not(:first-child) {
+	margin-top: 2em;
+}
+/*
+===============================
+ POSTS NAVIGATION
+===============================
+*/
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+}
+.post-navigation .nav-links {
+}
+.comment-navigation .nav-previous a,
+.posts-navigation .nav-previous a,
+.post-navigation .nav-previous a {
+}
+
+.comment-navigation .nav-next a,
+.posts-navigation .nav-next a,
+.post-navigation .nav-next a {
+}
+.comment-navigation a,
+.post-navigation a,
+.post-navigation a {
+}
+.nav-previous a::before,
+.nav-next a::before {
+}
+.nav-previous a::before {
+}
+.nav-next a {
+}
+.nav-next a::before {
+}
+.nav-subtitle {
+}
+.nav-title {
 }
 /*
 ============================
  WIDGET AREA / SIDEBAR / ADD'L BLOCK AREAS
 ===============================
 */
+.widget-area {
+	padding-top: var(--padding);
+}
 .widget {
 	padding: calc(var(--padding) / 2);
 }
