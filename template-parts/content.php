@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -10,26 +11,32 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+	<?php
+	// if it's an archive page
+	if ( ! is_singular() ) {
+		the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+	} elseif (get_field('custom_blog_header', 'option') == 1) { 
+		// nothing
+	 } elseif (get_field('custom_blog_header', 'option') == 0) { ?>
+		<header class="entry-header">
+			<?php the_title('<h1 class="entry-title">', '</h1>');
 
-		if ( 'post' === get_post_type() ) :
+			if ('post' === get_post_type()) :
 			?>
-			<div class="entry-meta">
-				<?php
-				rad_posted_on();
-				rad_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+				<div class="entry-meta">
+					<?php
+					rad_posted_on();
+					rad_posted_by();
+					?>
+				</div><!-- .entry-meta -->
+			<?php endif; ?>
+		</header><!-- .entry-header -->
+	<?php } ?>
+
+
 
 	<?php rad_post_thumbnail(); ?>
+
 
 	<div class="entry-content">
 		<?php
@@ -37,20 +44,20 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'rad' ),
+					__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'rad'),
 					array(
 						'span' => array(
 							'class' => array(),
 						),
 					)
 				),
-				wp_kses_post( get_the_title() )
+				wp_kses_post(get_the_title())
 			)
 		);
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rad' ),
+				'before' => '<div class="page-links">' . esc_html__('Pages:', 'rad'),
 				'after'  => '</div>',
 			)
 		);

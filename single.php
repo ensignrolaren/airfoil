@@ -9,8 +9,12 @@
  */
 
 get_header();
-?>
-<?php
+
+// if there's a custom post header, show it here
+if (get_field('custom_blog_header', 'option') == 1) {
+	dynamic_sidebar('blog-header');
+}
+
 if (get_field('show_sidebar_on_all_posts', 'option') == 1) :
 
 	echo '<div class="sidebar-wrapper">';
