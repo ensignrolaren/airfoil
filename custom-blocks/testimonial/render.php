@@ -40,9 +40,13 @@ if (!empty($block['align'])) {
 		</div>
 		<div class="rad-testimonial__name">
 			<?php
-			$name_company = get_field('name_company');
-			if ($name_company) :
-				echo $name_company;
+			$name = get_field('name');
+			if ($name) :
+				echo '<div class="name">' . $name . '</div>';
+			endif;
+			$company = get_field('company');
+			if ($company) :
+				echo '<div class="company">' . $company . '</div>';
 			endif;
 			?>
 		</div>

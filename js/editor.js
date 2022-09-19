@@ -74,6 +74,22 @@ wp.domReady( () => {
 			label: 'Leader Text',
 		}
 	]);
+	// Custom Media & Text
+	wp.blocks.registerBlockStyle( 'core/media-text', [ 
+		{
+			name: 'default',
+			label: 'Default',
+			isDefault: true,
+		},
+		{
+			name: 'overlap',
+			label: 'Overlap',
+		},
+		{
+			name: 'stack',
+			label: 'Stack',
+		}
+	]);
 	// Custom List
 	wp.blocks.registerBlockStyle( 'core/list', [ 
 		{

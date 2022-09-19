@@ -23,9 +23,9 @@
         },
         {
             "key": "field_63176d715c5e8",
-            "label": "Name\/ Company",
-            "name": "name_company",
-            "type": "textarea",
+            "label": "Name",
+            "name": "name",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -36,9 +36,28 @@
             },
             "default_value": "",
             "maxlength": "",
-            "rows": "",
             "placeholder": "",
-            "new_lines": "wpautop"
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6328a1d170cde",
+            "label": "Company",
+            "name": "company",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_63176da25c5e9",
@@ -83,5 +102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662564699
+    "modified": 1663607385
 }
