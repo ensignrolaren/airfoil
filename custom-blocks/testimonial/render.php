@@ -38,15 +38,15 @@ if (!empty($block['align'])) {
 				<?php echo wp_get_attachment_image($image['id'], 'full'); ?>
 			<?php endif; ?>
 		</div>
-		<div class="rad-testimonial__name">
+		<div class="rad-testimonial__text">
 			<?php
 			$name = get_field('name');
 			if ($name) :
-				echo '<div class="name">' . $name . '</div>';
+				echo '<div class="rad-testimonial__name">' . $name . '</div>';
 			endif;
 			$company = get_field('company');
 			if ($company) :
-				echo '<div class="company">' . $company . '</div>';
+				echo '<div class="rad-testimonial__company">' . $company . '</div>';
 			endif;
 			?>
 		</div>
