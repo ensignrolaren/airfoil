@@ -13,11 +13,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	// if it's an archive page
-	if ( ! is_singular() ) {
+	if (!is_singular()) {
 		the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-	} elseif (get_field('custom_blog_header', 'option') == 1) { 
+	} elseif (get_field('custom_blog_header', 'option') == 1) {
 		// nothing
-	 } elseif (get_field('custom_blog_header', 'option') == 0) { ?>
+	} elseif (get_field('custom_blog_header', 'option') == 0) { ?>
 		<header class="entry-header">
 			<?php the_title('<h1 class="entry-title">', '</h1>');
 
@@ -31,12 +31,8 @@
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
+		<?php rad_post_thumbnail(); ?>
 	<?php } ?>
-
-
-
-	<?php rad_post_thumbnail(); ?>
-
 
 	<div class="entry-content">
 		<?php
