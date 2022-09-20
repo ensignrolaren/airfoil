@@ -27,7 +27,7 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'rad'); ?></a>
 
-		<div class="site-header-wrapper">
+		<div class="site-header__wrapper">
 			<header id="masthead" class="site-header">
 				<div class="site-header__inner-container">
 					<div class="site-branding">
