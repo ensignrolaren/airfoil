@@ -25,12 +25,13 @@ if (!empty($block['align'])) {
 				<?php while (have_rows('faq')) : the_row(); ?>
 					<details class="rad-faq__faq">
 						<summary class="rad-faq__question">
-							<?php the_sub_field('faq_question'); ?>
+							<div class="rad-faq__question-inner"><?php the_sub_field('faq_question'); ?></div>
 						</summary>
 						<div class="rad-faq__answer">
 							<?php the_sub_field('faq_answer'); ?>
 						</div>
 					</details>
+					<hr class="rad-faq__separator"/>
 				<?php endwhile; ?>
 			<?php else : ?>
 				<?php // no rows found 
