@@ -123,10 +123,10 @@ if ( ! function_exists( 'rad_setup' ) ) :
 		});
 
 		// adds a class to the body if there's js enabled or not
-		function rad_html_js_class() {
-			echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>' . "\n";
-		}
-		add_action('wp_head', 'rad_html_js_class', 1);
+		// function rad_html_js_class() {
+		// 	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>' . "\n";
+		// }
+		// add_action('wp_head', 'rad_html_js_class', 1);
 	} endif;
 add_action( 'after_setup_theme', 'rad_setup' );
 

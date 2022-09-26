@@ -26,7 +26,7 @@ if (!empty($block['align'])) {
 				<div class="rad-timeline__event-content">
 					<?php $event = get_sub_field('event'); ?>
 					<?php if ($event) : ?>
-						<?php echo $event; ?>
+						<InnerBlocks />
 					<?php endif; ?>
 				</div>
 				<div class="rad-timeline__event-spacer">

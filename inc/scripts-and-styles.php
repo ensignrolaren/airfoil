@@ -8,7 +8,7 @@ function rad_frontend_assets() {
 	// enqueue scripts
 	wp_enqueue_script('rad-scrollbar-fix', get_template_directory_uri() . '/js/scrollbar-fix.js', array(), _S_VERSION, true);
 	// todo use wordpress function rather than ACF
-	if (get_field('responsive_menu_behavior', 'option') == 'responsive-menu') {
+	if (get_field('responsive_menu', 'option') == 'responsive-menu') {
 		wp_enqueue_script('rad-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 	}
 	if (get_field('sticky_header', 'option') == 'sticky-header') {
@@ -55,3 +55,10 @@ function rad_generate_faq_schema($schema) {
 	endif;
 }
 add_action('wp_footer', 'rad_generate_faq_schema', 100);
+
+
+// Add a class of js/ no-js depending on whether js is available in browser
+function rad_html_js_class() {
+	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>' . "\n";
+}
+add_action('wp_head', 'rad_html_js_class', 1);

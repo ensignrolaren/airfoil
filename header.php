@@ -12,7 +12,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -41,6 +41,7 @@
 							array(
 								'theme_location' => 'menu-1',
 								'menu_id'        => 'primary-menu',
+								'items_wrap' 	 => '<button id="close" class="close-button">Close <span class="close-symbol">×</span></button><ul id="%1$s" class="%2$s">%3$s</ul>'
 							)
 						);
 						?>

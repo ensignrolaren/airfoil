@@ -430,17 +430,23 @@ button.menu-toggle {
 	.js #close {
 		text-transform: uppercase;
 		display: block;
-		padding: 0;
+		/* padding: 0; */
 		width: 100%;
 		font-size: 100%;
 		text-align: right;
-		background: none transparent;
+		/* background: none transparent; */
 		border: none;
 		border-radius: 0;
 		cursor: pointer;
 	}
 	.close-symbol {
 		position: relative;
+	}
+	.close-button {
+		padding: 1rem;
+		display: block;
+		background-color: #343435;
+		color: #fff;
 	}
 	.js button.menu-toggle {
 		display: block;
@@ -451,7 +457,7 @@ button.menu-toggle {
 	}
 	.js .main-navigation > div:first-of-type /*this should always be the primary nav */ {
 		display: block;
-		background-color: #fff;
+		background-color: #454545;
 		position: absolute;
 		left: -300px;
 		top: 0;
@@ -459,8 +465,10 @@ button.menu-toggle {
 		height: 100vh;
 		transition: all 300ms ease-in-out;
 		z-index: 999;
-		padding: 1rem;
 		justify-content: unset;
+	}
+	.js .main-navigation .menu {
+		padding: 0 1rem;
 	}
 	.main-navigation .sub-menu .menu-item {
 		font-size: 1rem;
@@ -470,6 +478,7 @@ button.menu-toggle {
 		display: block;
 	}
 	.js .main-navigation .menu .menu-item a {
+		padding: 1rem;
 		border-bottom: 1px solid #e3e3e3;
 	}
 	.js .main-navigation .sub-menu {
@@ -492,6 +501,10 @@ button.menu-toggle {
 		left: 0;
 		top: 0;
 		width: 80%;
+	}
+	/* scooch down to make room for wp admin bar */
+	.logged-in .main-navigation > div:first-of-type {
+		top: 46px;
 	}
 }
 @media screen and (max-width: 1024px) {
