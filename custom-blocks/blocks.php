@@ -26,5 +26,7 @@ function radical_load_blocks() {
 	register_block_type(get_template_directory() . '/custom-blocks/post-title/block.json');
 	// Post date
 	register_block_type(get_template_directory() . '/custom-blocks/post-date/block.json');
+	// Timeline
+	register_block_type(get_template_directory() . '/custom-blocks/timeline/block.json');
 }
 add_action('init', 'radical_load_blocks');
