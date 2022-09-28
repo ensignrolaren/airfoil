@@ -52,6 +52,14 @@
 		}
 	} );
 
+	// Close mobile menu when user clicks the close button
+	document.getElementById( 'close' ).addEventListener( 'click', function() {
+		passive: true;
+		if (event.type == 'click') {
+			siteNavigation.classList.remove( 'toggled' );
+		};
+	} );
+
 	// Get all the link elements within the menu.
 	const links = menu.getElementsByTagName( 'a' );
 
@@ -60,8 +68,6 @@
 
 	// Toggle focus each time a menu link is focused or blurred.
 	for ( const link of links ) {
-		// link.addEventListener( 'focus', toggleFocus, true );
-		// link.addEventListener( 'blur', toggleFocus, true );
 		link.addEventListener( 'focus', toggleFocus, true, { passive: true } );
 		link.addEventListener( 'blur', toggleFocus, true, { passive: true } );
 	}

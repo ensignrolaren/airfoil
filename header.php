@@ -41,7 +41,7 @@
 							array(
 								'theme_location' => 'menu-1',
 								'menu_id'        => 'primary-menu',
-								'items_wrap' 	 => '<button id="close" class="close-button">Close <span class="close-symbol">×</span></button><ul id="%1$s" class="%2$s">%3$s</ul>'
+								'items_wrap' 	 => '<button id="close" class="close-button">Close</button><ul id="%1$s" class="%2$s">%3$s</ul>'
 							)
 						);
 						?>

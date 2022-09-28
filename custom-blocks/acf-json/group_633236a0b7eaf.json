@@ -1,10 +1,10 @@
 {
-    "key": "group_63310abb5e173",
-    "title": "Block: Timeline",
+    "key": "group_633236a0b7eaf",
+    "title": "Block: Carousel Item",
     "fields": [
         {
-            "key": "field_6331fcacf4a82",
-            "label": "Timeline Message",
+            "key": "field_633236a0b96dd",
+            "label": "Carousel Item",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Please use preview mode to add Event blocks to this timeline.",
+            "message": "Add core blocks",
             "new_lines": "wpautop",
             "esc_html": 0
         }
@@ -25,7 +25,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "rad\/timeline"
+                "value": "rad\/carousel-item"
             }
         ]
     ],
@@ -38,5 +38,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664220372
+    "modified": 1664235277
 }

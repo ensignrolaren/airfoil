@@ -1,15 +1,15 @@
 {
-	"name": "rad/timeline",
-	"title": "Timeline",
-	"description": "A block to display events along a vertical timeline",
+	"name": "rad/carousel-item",
+	"title": "Carousel Item",
+	"description": "Carousel item block for use within the Carousel block",
 	"category": "radical",
 	"icon": "carrot",
 	"apiVersion": 2,
 	"keywords": [
-		"timeline",
-		"media",
-		"text",
-		"review"
+		"carousel",
+		"slideshow",
+		"slide",
+		"slides"
 	],
 	"acf": {
 		"mode": "edit",
@@ -17,7 +17,7 @@
 	},
 	"styles": [],
 	"supports": {
-		"align": true,
+		"align": false,
 		"anchor": true,
 		"alignContent": true,
 		"color": {

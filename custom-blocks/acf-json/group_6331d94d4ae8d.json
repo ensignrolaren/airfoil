@@ -1,10 +1,10 @@
 {
-    "key": "group_63310abb5e173",
-    "title": "Block: Timeline",
+    "key": "group_6331d94d4ae8d",
+    "title": "Block: Timeline Event",
     "fields": [
         {
-            "key": "field_6331fcacf4a82",
-            "label": "Timeline Message",
+            "key": "field_6331d94d210ac",
+            "label": "Timeline event",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Please use preview mode to add Event blocks to this timeline.",
+            "message": "Add core blocks",
             "new_lines": "wpautop",
             "esc_html": 0
         }
@@ -25,7 +25,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "rad\/timeline"
+                "value": "rad\/timeline-event"
             }
         ]
     ],
@@ -38,5 +38,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664220372
+    "modified": 1664221402
 }

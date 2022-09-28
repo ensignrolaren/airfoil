@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Timeline block rendering
+ * Carousel block rendering
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -18,7 +18,7 @@ if (!empty($block['align'])) {
 	$classes .= sprintf(' align%s', $block['align']);
 }
 ?>
-<div class="rad-timeline <?php echo esc_attr($classes); ?>">
-	<!-- timeline -->
-	<InnerBlocks />
+<div class="rad-carousel <?php echo esc_attr($classes); ?>">
+	<!-- carousel -->
+	<InnerBlocks class="rad-carousel__inner" />
 </div>

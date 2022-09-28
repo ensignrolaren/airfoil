@@ -28,5 +28,18 @@ function radical_load_blocks() {
 	register_block_type(get_template_directory() . '/custom-blocks/post-date/block.json');
 	// Timeline
 	register_block_type(get_template_directory() . '/custom-blocks/timeline/block.json');
+	// Timeline Event
+	register_block_type(get_template_directory() . '/custom-blocks/timeline-event/block.json');
+	// Carousel
+	register_block_type(get_template_directory() . '/custom-blocks/carousel/block.json');
+	// Carousel Item
+	register_block_type(get_template_directory() . '/custom-blocks/carousel-item/block.json');
 }
 add_action('init', 'radical_load_blocks');
+
+function rad_register_block_script() {
+	wp_register_script( 'block-carousel', get_template_directory_uri() . '/custom-blocks/carousel/carousel.js', [ 'jquery', 'acf' ] );
+	wp_enqueue_style('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '1.8.1');
+	wp_register_script('slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery']);
+}
+add_action( 'init', 'rad_register_block_script' );
