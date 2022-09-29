@@ -4,7 +4,10 @@
 	"description": "Carousel/slideshow block to cycle through content like images, text, or anything",
 	"category": "radical",
 	"icon": "carrot",
-	"script": ["block-carousel", "slick-js"],
+	"style": "file:./carousel.css",
+	"editorStyle": "file:./carousel.css",
+	"editorScript": "block-carousel",
+	"script": "block-carousel",
 	"apiVersion": 2,
 	"keywords": [
 		"carousel",
