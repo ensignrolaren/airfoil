@@ -378,7 +378,7 @@ site navigation
 		transition: color 100ms ease;
 	}
 	.main-navigation .menu-item-has-children > a:after {
-		content: " ›";
+		content: "\203A";
 		transform: rotate(90deg);
 		transition: transform 250ms ease;
 		display: inline-block;
@@ -462,7 +462,7 @@ button.menu-toggle {
 		display: flex;
 		flex-direction: column-reverse;
 		background-color: #454545;
-		position: absolute;
+		position: fixed;
 		left: -300px;
 		top: 0;
 		width: 300px;
@@ -506,7 +506,7 @@ button.menu-toggle {
 
 	/* when the button's clicked */
 	.main-navigation.toggled > div:first-of-type /*this should always be the primary nav */ {
-		position: absolute;
+		position: fixed;
 		left: 0;
 		top: 0;
 		width: 80%;
