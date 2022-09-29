@@ -41,13 +41,42 @@
             "ui": 1
         },
         {
+            "key": "field_6334ca301469d",
+            "label": "Slides to Show",
+            "name": "slides_to_show",
+            "type": "number",
+            "instructions": "Max number of slides to show per panel",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1,
+            "min": 1,
+            "max": 6,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6334c9ed8ec89",
             "label": "Fade",
             "name": "fade",
             "type": "true_false",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6334ca301469d",
+                        "operator": "<",
+                        "value": "2"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -55,16 +84,16 @@
             },
             "message": "",
             "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
+            "ui_on_text": "Fade",
+            "ui_off_text": "Slide",
             "ui": 1
         },
         {
             "key": "field_6334ca057549a",
-            "label": "Dots",
+            "label": "Show Dots",
             "name": "dots",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Dots help indicate which slide is active",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -157,27 +186,6 @@
             "append": "ms"
         },
         {
-            "key": "field_6334ca301469d",
-            "label": "Slides to Show",
-            "name": "slides_to_show",
-            "type": "number",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 1,
-            "min": 1,
-            "max": 6,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_6334dc9fb6729",
             "label": "Crop To Max Height",
             "name": "crop_to_max_height",
@@ -244,5 +252,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664408996
+    "modified": 1664420463
 }
