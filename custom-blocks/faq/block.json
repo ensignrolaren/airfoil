@@ -4,8 +4,8 @@
 	"description": "Frequently Asked Questions",
 	"category": "radical",
 	"icon": "carrot",
-	"style": "file:./style.css",
-	"editorStyle": "file:./style.css",
+	"style": "file:./faq.css",
+	"editorStyle": "file:/faq.css",
 	"apiVersion": 2,
 	"keywords": [
 		"faq",
