@@ -223,6 +223,12 @@ BLOCKS
 .wp-block-column.has-background p:last-of-type {
 	margin-bottom: 0;
 }
+/* media & text */
+/* media & text stack style */
+.wp-block-media-text.is-style-stack {
+	display: flex;
+	flex-direction: column;
+}
 /*
 +++++++++++++++++++
 QUOTES

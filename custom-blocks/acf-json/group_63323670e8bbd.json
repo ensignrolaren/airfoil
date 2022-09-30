@@ -22,6 +22,35 @@
             "ui": 1
         },
         {
+            "key": "field_633536410feef",
+            "label": "Autoplay Speed",
+            "name": "autoplay_speed",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63323670ea4a6",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 2000,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6334c9b6abf96",
             "label": "Show Arrows",
             "name": "arrows",
@@ -252,5 +281,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664420463
+    "modified": 1664431761
 }

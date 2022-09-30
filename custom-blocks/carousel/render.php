@@ -31,6 +31,11 @@ else :
 	$autoplay = 'false';
 endif;
 
+// autoplay
+if (get_field('autoplay_speed')) :
+	$autoplayspeed = get_field('autoplay_speed');
+endif;
+
 // arrows
 if (get_field('arrows') == 1) :
 	$arrows = 'true';
@@ -88,16 +93,17 @@ endif;
 </div>
 <?php
 if (get_field('crop_to_max_height') == 1) : ?>
-<style type="text/css">
-	.rad-carousel__item {
-		height: <?php echo $max_height; ?>px;
-		max-height: 100vh;
-	}
-</style>
+	<style type="text/css">
+		.rad-carousel__item {
+			height: <?php echo $max_height; ?>px;
+			max-height: 100vh;
+		}
+	</style>
 <?php endif; ?>
 
 <script type="text/javascript">
 	var autoPlay = <?php echo $autoplay; ?>;
+	var autoplaySpeed = <?php echo $autoplayspeed; ?>;
 	var arrows = <?php echo $arrows; ?>;
 	var fade = <?php echo $fade; ?>;
 	var dots = <?php echo $dots; ?>;
