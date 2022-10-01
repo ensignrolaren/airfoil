@@ -583,6 +583,9 @@ SITE FOOTER
 	/* margin-left: calc(var(--padding) * -1);
 	margin-right: calc(var(--padding) * -1); */
 }
+.site-footer .footer-section :where(.wp-block-columns.has-background) {
+	padding: unset;
+}
 .site-footer .footer-section .menu,
 .site-footer .footer-section ul {
 	list-style-type: none;
