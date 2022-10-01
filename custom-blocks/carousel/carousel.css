@@ -21,6 +21,10 @@
 	height: 100%;
 	width: 100%;
 }
+/* animate text  */
+.rad-carousel-item__inner > div > *:not(img) {
+	opacity: 0;
+}
 /* indicators/dots */
 .slick-slider .slick-dots {
 	position: absolute;
