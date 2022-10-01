@@ -48,7 +48,7 @@
             "placeholder": "",
             "step": "",
             "prepend": "",
-            "append": ""
+            "append": "ms"
         },
         {
             "key": "field_6334c9b6abf96",
@@ -281,5 +281,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664431761
+    "modified": 1664581232
 }
