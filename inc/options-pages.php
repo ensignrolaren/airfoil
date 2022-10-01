@@ -21,13 +21,6 @@ function rad_body_open() { ?>
 	<style>
 		:root {
 			--normal-width: <?php the_field('normal_content_width', 'option'); ?>px;
-			--padding: <?php the_field('padding', 'option'); ?>rem;
-		}
-
-		@media screen and (max-width: 768px) {
-			:root {
-				--padding: calc(<?php the_field('padding', 'option'); ?>rem / 2);
-			}
 		}
 	</style>
 <?php }

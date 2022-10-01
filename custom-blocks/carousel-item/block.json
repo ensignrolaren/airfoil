@@ -12,7 +12,7 @@
 		"slides"
 	],
 	"acf": {
-		"mode": "edit",
+		"mode": "preview",
 	"renderTemplate": "render.php"
 	},
 	"styles": [],

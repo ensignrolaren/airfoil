@@ -48,31 +48,7 @@ function remove_jquery_migrate($cripts) {
 add_action('wp_default_scripts', 'remove_jquery_migrate');
 
 // don't load the whole core block stylesheet on every page
-// add_filter('should_load_separate_core_block_assets', '__return_true');
-
-// Filter the whole wp output to prevent lazy loading of first image
-// improves LCP score by not delaying images that are likely above-the-fold
-// https://bloggingcommerce.com/en/how-to-selectively-disable-lazy-load/
-// function selective_lazy_load($content) {
-// 	if (is_single() || is_page() || is_front_page() || is_home()) {
-// 		$content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
-// 		$document = new DOMDocument();
-// 		libxml_use_internal_errors(true);
-// 		$document-> loadHTML(utf8_decode ($content));
-// 		$imgs = $document-> getElementsByTagName('img');
-// 		$img = $imgs[0];
-// 		if ($imgs->item(0)) {// We check first if it is the first image of the content
-// 			$img-> removeAttribute('loading');
-// 			$html = $document-> saveHTML();
-// 			return $html;
-// 		} else {
-// 			return $content;
-// 		}
-// 	} else {
-// 		return $content;
-// 	}
-// }
-// add_filter ('the_content', 'selective_lazy_load');
+add_filter('should_load_separate_core_block_assets', '__return_true');
 
 // dequeue jquery conditionally
 // add_action('wp_enqueue_scripts', 'enqueue_if_block_is_not_present');

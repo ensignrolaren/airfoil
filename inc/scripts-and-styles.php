@@ -6,7 +6,7 @@ function rad_frontend_assets() {
 	// wp_style_add_data('rad-style', 'rtl', 'replace');
 
 	// enqueue scripts
-	wp_enqueue_script('rad-scrollbar-fix', get_template_directory_uri() . '/js/scrollbar-fix.js', array(), _S_VERSION, true);
+	// wp_enqueue_script('rad-scrollbar-fix', get_template_directory_uri() . '/js/scrollbar-fix.js', array(), _S_VERSION, true);
 	// todo use wordpress function rather than ACF
 	if (get_field('responsive_menu', 'option') == 'responsive-menu') {
 		wp_enqueue_script('rad-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
