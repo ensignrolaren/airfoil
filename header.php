@@ -34,7 +34,7 @@
 					</div><!-- .site-branding -->
 
 					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'rad'); ?></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo wp_get_nav_menu_name('menu-1'); ?> <span aria-hidden="true">&#9776;</span></button>
 						<?php
 						wp_nav_menu(
 							array(

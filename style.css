@@ -445,7 +445,7 @@ site navigation
 		display: block;
 	}
 }
- /* responsive/mobile menu stuff */
+ /* hide hamburger on large screens */
 button.menu-toggle {
 	display: none;
 	color: #fff;
@@ -465,7 +465,7 @@ button.menu-toggle {
 	display: none;
 }
 @media screen and (max-width: 768px) {
-	.js  .main-navigation {
+	.js .main-navigation {
 		justify-content: center;
 	}
 	.js #close {
@@ -490,8 +490,10 @@ button.menu-toggle {
 		margin-left: .5rem;
 		filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 	}
+	/* show hamburger on mobile */
 	.js button.menu-toggle {
 		display: block;
+		line-height: 1;
 	}
 	.js .main-navigation {
 		display: flex;
@@ -575,6 +577,15 @@ SITE FOOTER
 .site-footer :last-child,
 .site-credits :last-child {
 	margin-bottom: 0;
+}
+.site-footer .footer-section .wp-block-columns {
+	gap: var(--padding);
+	/* margin-left: calc(var(--padding) * -1);
+	margin-right: calc(var(--padding) * -1); */
+}
+.site-footer .footer-section .menu,
+.site-footer .footer-section ul {
+	list-style-type: none;
 }
 /* site credits */
 /*
