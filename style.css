@@ -151,6 +151,9 @@ a {
 button {
 	cursor: pointer;
 }
+button:focus {
+	/* outline: auto; */
+}
 .wp-block-buttons {
 	margin-bottom: 1em;
 }
@@ -159,6 +162,9 @@ a.wp-block-button__link {
 	padding: .5rem 1.25rem;
 	border: 0;
 	border-radius: 3px;
+}
+.wp-block-button__link:focus {
+	outline: auto;
 }
 .wp-block-button.alignright {
 	float: none;
@@ -238,12 +244,14 @@ GLOBAL LAYOUT
 }
 /* wide children will break out, but not quite full-width */
 .site-header > *,
-.site-footer > * {
+.site-footer > *,
+.sidebar-wrapper > * {
 	margin-left: calc(25% - 25vw) !important;
 	margin-right: calc(25% - 25vw) !important;
 }
 .has-scrollbar .site-header > *,
-.has-scrollbar .site-footer > * {
+.has-scrollbar .site-footer > *
+.has-scrollbar .sidebar-wrapper > * {
 	margin-left: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
 	margin-right: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
 }
@@ -296,13 +304,11 @@ GLOBAL LAYOUT
 	margin-right: auto !important;
 }
 .sidebar-wrapper {
-    max-width: var(--normal-width);
-    margin-left: auto;
-    margin-right: auto;
+	max-width: var(--normal-width);
+	margin-left: auto;
+	margin-right: auto;
 }
 .sidebar-wrapper__inner-container {
-	margin-left: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
-    margin-right: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
 	display: flex;
 	flex-wrap: wrap;
 }
