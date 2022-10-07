@@ -10,15 +10,25 @@
  */
 
 // Create class attribute allowing for custom "className" and "align" values.
-$classes = '';
-if (!empty($block['className'])) {
-	$classes .= sprintf(' %s', $block['className']);
+$classes = [ 'rad-timeline' ];
+if ( ! empty( $block['className'] ) ) {
+	$classes = array_merge( $classes, explode( ' ', $block['className'] ) );
 }
-if (!empty($block['align'])) {
-	$classes .= sprintf(' align%s', $block['align']);
+if ( ! empty( $block['align'] ) ) {
+	$classes[] = 'align' . $block['align'];
 }
-?>
-<div class="rad-timeline <?php echo esc_attr($classes); ?>">
-	<!-- timeline -->
+if ( ! empty( $block['backgroundColor'] ) ) {
+	$classes[] = 'has-background';
+	$classes[] = 'has-' . $block['backgroundColor'] . '-background-color';
+}
+if ( ! empty( $block['textColor'] ) ) {
+	$classes[] = 'has-text-color';
+	$classes[] = 'has-' . $block['textColor'] . '-color';
+}
+printf(
+	'<div class="%s"%s>',
+	esc_attr(join(' ', $classes)),
+	!empty($block['anchor']) ? ' id="' . esc_attr(sanitize_title($block['anchor'])) . '"' : '',
+); ?>
 	<InnerBlocks />
 </div>
