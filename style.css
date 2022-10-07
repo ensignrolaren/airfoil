@@ -406,7 +406,7 @@ site navigation
 	}
 	.main-navigation .menu:first-of-type > .menu-item {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		border-top: 5px solid transparent;
 		transition: all 250ms ease;
 	}
