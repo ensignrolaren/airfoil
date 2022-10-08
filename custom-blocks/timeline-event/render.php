@@ -10,7 +10,7 @@
  */
 
 // Create class attribute allowing for custom "className" and "align" values.
-$classes = ['rad-timeline-event'];
+$classes = ['rad-timeline__event'];
 if (!empty($block['className'])) {
 	$classes = array_merge($classes, explode(' ', $block['className']));
 }
