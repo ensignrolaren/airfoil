@@ -229,6 +229,46 @@ BLOCKS
 	display: flex;
 	flex-direction: column;
 }
+/* timeline of events block */
+.rad-timeline__event {
+	display: flex;
+}
+.rad-timeline__event:nth-of-type(even) {
+	flex-direction: row-reverse;
+}
+.rad-timeline__event-spacer,
+.rad-timeline__event .rad-timeline__event-inner {
+	flex: 0 0 50%;
+	max-width: 50%;
+	padding: 1rem 2rem;
+}
+.rad-timeline__event .rad-timeline__event-inner {
+	border: 2px dashed transparent;
+	border-right: 2px dashed #ccc;
+}
+.rad-timeline__event:nth-of-type(even) .rad-timeline__event-inner {
+	border-left: 2px dashed #ccc;
+	border-right: 2px solid transparent;
+	position: relative;
+	left: -2px;
+}
+.rad-timeline__event .rad-timeline__event-inner .acf-innerblocks-container {
+	padding: 2rem;
+	position: relative;
+	background-color: #ccc;
+}
+.rad-timeline__event .rad-timeline__event-inner .acf-innerblocks-container:after {
+	content: "";
+	height: 2px;
+	width: 2rem;
+	border: 2px dashed #ccc;
+	border-width: 2px 0 0 0;
+	position: absolute;
+	right: -2rem;
+}
+.rad-timeline__event:nth-of-type(even) .rad-timeline__event-inner .acf-innerblocks-container:after {
+	left: -2rem;
+}
 /*
 +++++++++++++++++++
 QUOTES
@@ -308,59 +348,4 @@ SEPARATORS
 .editor-styles-wrapper hr.wp-block-separator.is-style-small-spacer:hover {
 	outline: 3px dashed #d0d0d0;
 	background: rgba(245, 245, 245, .2);
-}
-/* ACF Color Picker Component */
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_text_color] ul.acf-radio-list,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_highlight_color] ul.acf-radio-list,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_background_color] ul.acf-radio-list {
-	display: flex;
-	flex-wrap: wrap;
-	padding-left: 0;
-	margin-left: 0;
-}
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_text_color] ul.acf-radio-list li,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_highlight_color] ul.acf-radio-list li,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_background_color] ul.acf-radio-list li {
-	margin-right: 0;
-	display: flex;
-}
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_text_color] ul.acf-radio-list li label,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_highlight_color] ul.acf-radio-list li label,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_background_color] ul.acf-radio-list li label {
-	width: 28px;
-	height: 28px;
-	position: relative;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	color: #fff;
-	font-size: 0;
-}
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_text_color] ul.acf-radio-list li label input[type="radio"],
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_highlight_color] ul.acf-radio-list li label input[type="radio"],
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_background_color] ul.acf-radio-list li label input[type="radio"] {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 28px;
-	height: 28px;
-}
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_text_color] ul.acf-radio-list li label input[type="radio"]:checked::before,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_highlight_color] ul.acf-radio-list li label input[type="radio"]:checked::before,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_background_color] ul.acf-radio-list li label input[type="radio"]:checked::before {
-	content: "\f15e";
-	font-family: dashicons;
-	width: 20px;
-	height: 20px;
-	background-color: transparent;
-	font-size: 20px;
-	margin: 1px;
-	color: #fff;
-}
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_text_color] ul.acf-radio-list li label input[type="radio"][value="white"]:checked::before,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_background_color] ul.acf-radio-list li label input[type="radio"][value="white"]:checked::before,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_text_color] ul.acf-radio-list li label input[type="radio"][value="silver"]:checked::before,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_background_color] ul.acf-radio-list li label input[type="radio"][value="silver"]:checked::before,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_text_color] ul.acf-radio-list li label input[type="radio"][value="valkyrie"]:checked::before,
-.wp-admin .acf-block-component .acf-field[data-name=moonwatch_background_color] ul.acf-radio-list li label input[type="radio"][value="valkyrie"]:checked::before {
-	color: #000;
 }
