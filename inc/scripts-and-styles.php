@@ -8,6 +8,10 @@ function rad_frontend_assets() {
 	// enqueue scripts
 	// wp_enqueue_script('rad-scrollbar-fix', get_template_directory_uri() . '/js/scrollbar-fix.js', array(), _S_VERSION, true);
 	// todo use wordpress function rather than ACF
+
+	// wp_dequeue_style('wp-block-library');
+	// wp_deregister_style('wp-block-library');
+
 	if (get_field('responsive_menu', 'option') == 'responsive-menu') {
 		wp_enqueue_script('rad-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 	}
