@@ -64,23 +64,39 @@ if ( ! function_exists( 'rad_setup' ) ) :
 				'slug' => 'regular'
 			),
 			array(
+				'name' => esc_attr__('Extra Regular', 'rad'),
+				'size' => 22,
+				'slug' => 'extra-regular'
+			),
+			array(
 				'name' => esc_attr__('Medium', 'rad'),
-				'size' => 36,
+				'size' => 26,
 				'slug' => 'medium'
 			),
 			array(
+				'name' => esc_attr__('Extra Medium', 'rad'),
+				'size' => 31,
+				'slug' => 'extra-medium'
+			),
+			array(
 				'name' => esc_attr__('Large', 'rad'),
-				'size' => 42,
+				'size' => 40,
 				'slug' => 'large'
+			),
+
+			array(
+				'name' => esc_attr__('Extra Large', 'rad'),
+				'size' => 50,
+				'slug' => 'x-large'
 			),
 			array(
 				'name' => esc_attr__('Huge', 'rad'),
-				'size' => 50,
+				'size' => 60,
 				'slug' => 'huge'
 			),
 			array(
 				'name' => esc_attr__('Big McLargeHuge', 'rad'),
-				'size' => 56,
+				'size' => 72,
 				'slug' => 'big-mclargehuge'
 			)
 		));

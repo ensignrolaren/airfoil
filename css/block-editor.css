@@ -1,5 +1,11 @@
 /*
 +++++++++++++++++++
+type
++++++++++++++++++++
+*/
+
+/*
++++++++++++++++++++
 ACF UI NEATENING
 +++++++++++++++++++
 */
@@ -34,6 +40,27 @@ body span.wp-color-result-text {
 GLOBAL
 +++++++++++++++++++
 */
+/* group block */
+/* large padding is the default for the group block */
+.wp-block-group > .wp-block-group__inner-container {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+}
+.wp-block-group.is-style-medium-padding > .wp-block-group__inner-container {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+.wp-block-group.is-style-small-padding > .wp-block-group__inner-container {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+.wp-block-group.is-style-no-padding > .wp-block-group__inner-container {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.wp-block-cover__inner-container :last-child:not(.wp-block-separator) {
+	margin-bottom: 0;
+}
 /* Main column width */
 .wp-block {
 	max-width: 800px;
