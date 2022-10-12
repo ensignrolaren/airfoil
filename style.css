@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Kelsey Barmettler
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.2.39
+Version: 1.2.40
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -116,39 +116,39 @@ h6 {
 	--rad-font-size-large-huge: clamp(68px, calc(4.25rem + ((1vw - 7.68px) * 0.3472)), 72px);
 }
 body .has-small-font-size {
-	font-size: var(--rad-font-size-small) !important;
+	font-size: var(--rad-font-size-small, 12px) !important;
 	min-height: 0vw;
 }
 body .has-regular-font-size {
-	font-size: var(--rad-font-size-regular) !important;
+	font-size: var(--rad-font-size-regular, 16px) !important;
 	min-height: 0vw;
 }
 body .has-extra-regular-font-size {
-	font-size: var(--rad-font-size-extra-regular) !important;
+	font-size: var(--rad-font-size-extra-regular, 18px) !important;
 	min-height: 0vw;
 }
 body .has-medium-font-size {
-	font-size: var(--rad-font-size-medium) !important;
+	font-size: var(--rad-font-size-medium, 24px) !important;
 	min-height: 0vw;
 }
 body .has-extra-medium-font-size {
-	font-size: var(--rad-font-size-extra-medium) !important;
+	font-size: var(--rad-font-size-extra-medium, 28px) !important;
 	min-height: 0vw;
 }
 body .has-large-font-size {
-	font-size: var(--rad-font-size-large) !important;
+	font-size: var(--rad-font-size-large, 36px) !important;
 	min-height: 0vw;
 }
 body .has-x-large-font-size {
-	font-size: var(--rad-font-size-larger) !important;
+	font-size: var(--rad-font-size-larger, 44px) !important;
 	min-height: 0vw;
 }
 body .has-huge-font-size {
-	font-size: var(--rad-font-size-huge);
+	font-size: var(--rad-font-size-huge, 55px);
 	min-width: 0vw;
 }
 .has-big-mclargehuge-font-size {
-	font-size: var(--rad-font-size-large-huge);
+	font-size: var(--rad-font-size-large-huge, 72px);
 	min-width: 0vw;
 }
 p {
@@ -183,7 +183,7 @@ a.wp-block-button__link {
 .wp-block-button.alignright {
 	float: none;
 	text-align: right;
-	max-width: var(--content-width);
+	max-width: var(--normal-width, 960px);
 	margin-left: auto;
 }
 .wp-block-button.aligncenter {
@@ -256,7 +256,7 @@ GLOBAL LAYOUT
 .wp-block-cover__inner-container,
 .site-footer,
 .site-credits {
-	max-width: var(--normal-width);
+	max-width: var(--normal-width, 960px);
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -337,7 +337,7 @@ GLOBAL LAYOUT
 	margin-right: auto !important;
 }
 .sidebar-wrapper {
-	max-width: var(--normal-width);
+	max-width: var(--normal-width, 960px);
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -444,7 +444,7 @@ site navigation
 		transition: all 250ms ease;
 	}
 	.main-navigation .menu:first-of-type > .menu-item:hover {
-		border-top: 5px solid red;
+		border-top: 5px solid #f50e02;
 	}
 	/* todo do i need this? */
 	.main-navigation .non-clickable > a {
