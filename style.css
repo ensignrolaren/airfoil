@@ -946,6 +946,11 @@ POSTS ARCHIVE
  POSTS NAVIGATION
 ===============================
 */
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	margin-top: var(--padding);
+}
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
@@ -984,7 +989,7 @@ POSTS ARCHIVE
 ===============================
 */
 .widget-area {
-	padding-top: var(--padding);
+	/* padding-top: var(--padding); */
 }
 .widget {
 	padding: calc(var(--padding) / 2);
