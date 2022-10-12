@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Kelsey Barmettler
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.2.38
+Version: 1.2.39
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -80,8 +80,8 @@ h4,
 h5,
 h6 {
 	font-weight: bold;
-	line-height: 1.12;
-	margin-bottom: .3657em;
+	line-height: 1.07;
+	margin-bottom: 1.3657rem;
 }
 h1 {
 	font-size: clamp(3.5rem, calc(3.5rem + ((1vw - 0.48rem) * -1.0417)), 2.75rem);
