@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Kelsey Barmettler
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.2.42
+Version: 1.2.43
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -379,9 +379,10 @@ SITE HEADER
 .site-header__inner-container {
 	display: flex;
 	justify-content: space-between;
+
+	gap: 1rem;
 	column-gap: 1rem;
 	row-gap: 1rem;
-	gap: 1rem;
 }
 /* -----------------------------
  site branding
@@ -725,17 +726,17 @@ ul.wp-block-post-template {
 }
 /* media & text block */
 .wp-block-media-text {
+	gap: 2rem;
 	column-gap: 2rem;
 	row-gap: 2rem;
-	gap: 2rem;
 }
 .wp-block-media-text .wp-block-media-text__content {
 	padding: 0;
 }
 .wp-block-media-text.has-background {
+	gap: 0;
 	column-gap: 0;
 	row-gap: 0;
-	gap: 0;
 }
 .wp-block-media-text.has-background  .wp-block-media-text__content{
 	padding: 2rem;
