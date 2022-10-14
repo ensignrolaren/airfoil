@@ -28,6 +28,8 @@ if ( ! defined( '_S_VERSION' ) ) {
  *
  * @global int $content_width
  */
+// Register widget area
+require get_template_directory() . '/inc/allow-svg.php';
 
 // Implement the Custom Header feature.
 require get_template_directory() . '/inc/custom-header.php';

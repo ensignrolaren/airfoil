@@ -16,6 +16,8 @@ function add_acf_json_load_folder( $paths ) {
 function radical_load_blocks() {
 	// Testimonial
 	register_block_type(get_template_directory() . '/custom-blocks/testimonial/block.json');
+	// Social Icons
+	register_block_type(get_template_directory() . '/custom-blocks/social-icons/block.json');
 	// FAQ
 	register_block_type(get_template_directory() . '/custom-blocks/faq/block.json');
 	// Copyright

@@ -21,7 +21,6 @@ if (!empty($block['align'])) {
 if (!empty($block['align_text'])) {
 	$classes[] = 'has-text-align-' . $block['align_text'];
 }
-
 if (!empty($block['backgroundColor'])) {
 	$classes[] = 'has-background';
 	$classes[] = 'has-' . $block['backgroundColor'] . '-background-color';
