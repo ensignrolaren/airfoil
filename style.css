@@ -211,7 +211,7 @@ ul.is-style-checkmark {
 	margin: 0 0 1rem 2rem;
 }
 ul.is-style-checkmark li:before {
-	content: '✓ ';
+	content: '\2713 ';
 	position: relative;
 	left: -0.5rem;
 	color: rgb(46, 144, 65);
