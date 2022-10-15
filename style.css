@@ -850,7 +850,7 @@ td {
 .rad-timeline__event .rad-timeline__event-inner {
 	flex: 0 0 50%;
 	max-width: 50%;
-	padding: 1rem 2rem;
+	padding: 0 2rem;
 }
 .rad-timeline__event-inner {
 	border: 2px dashed transparent;
@@ -859,8 +859,6 @@ td {
 	padding-bottom: 1rem;
 }
 .rad-timeline__event:nth-of-type(odd) .rad-timeline__event-inner {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
 	padding-right: 2rem;
 	padding-left: 0;
 }
@@ -869,8 +867,6 @@ td {
 	border-right: 2px solid transparent;
 	position: relative;
 	left: -2px;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
 	padding-right: 0;
 	padding-left: 2rem;
 }
@@ -892,6 +888,10 @@ td {
 	left: -2rem;
 }
 @media screen and (max-width: 600px) {
+	.rad-timeline__event-spacer,
+	.rad-timeline__event .rad-timeline__event-inner {
+		padding-bottom: 2rem;
+	}
 	.rad-timeline__event:nth-of-type(even) .rad-timeline__event-inner,
 	.rad-timeline__event .rad-timeline__event-inner {
 		border: none;
