@@ -354,24 +354,23 @@ SEPARATORS
 	width: 20%;
 	margin: 3rem auto;
 }
-.editor-styles-wrapper hr.wp-block-separator.is-style-spacer {
-	height: 6rem;
+.editor-styles-wrapper hr.wp-block-separator.is-style-spacer,
+.editor-styles-wrapper hr.wp-block-separator.is-style-small-spacer {
 	background: rgba(245, 245, 245, .1);
 	width: unset;
 	max-width: unset;
 	outline: 3px dashed #d0d0d0;
 	transition: background-color 150ms ease-in-out, outline-color 150ms ease-in-out;
+	margin-top: 0;
+	margin-bottom: 0;
 }
-.editor-styles-wrapper hr.wp-block-separator.is-style-spacer:hover {
-	outline: 3px dashed #d0d0d0;
-	background: rgba(245, 245, 245, .2);
+.editor-styles-wrapper hr.wp-block-separator.is-style-spacer {
+	height: 6rem;
 }
 .editor-styles-wrapper hr.wp-block-separator.is-style-small-spacer {
 	height: 3rem;
-	background: none;
-	width: unset;
-	max-width: unset;
 }
+.editor-styles-wrapper hr.wp-block-separator.is-style-spacer:hover,
 .editor-styles-wrapper hr.wp-block-separator.is-style-small-spacer:hover {
 	outline: 3px dashed #d0d0d0;
 	background: rgba(245, 245, 245, .2);
