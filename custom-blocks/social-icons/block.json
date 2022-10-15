@@ -18,6 +18,11 @@
 		"mode": "preview",
 	"renderTemplate": "render.php"
 	},
+    "example": {
+        "attributes": {
+            "message": "This is a notice!"
+        }
+    },
 	"styles": [],
 	"supports": {
 		"align": true,

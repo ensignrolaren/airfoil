@@ -39,19 +39,20 @@ if (!empty($block['linkColor'])) {
 		<?php while ( have_rows( 'social_icons' ) ) : the_row(); ?>
 			<?php if ( have_rows( 'icon' ) ) : ?>
 				<?php while ( have_rows( 'icon' ) ) : the_row(); ?>
-					<?php $image = get_sub_field( 'image' ); ?>
-					<?php if ( $image ) : ?>
-						<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
-					<?php endif; ?>
-					<?php the_sub_field( 'label' ); ?>
 					<?php $link = get_sub_field( 'link' ); ?>
 					<?php if ( $link ) : ?>
 						<a href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
 					<?php endif; ?>
+					<?php the_sub_field( 'account' ); ?>
 				<?php endwhile; ?>
 			<?php endif; ?>
 		<?php endwhile; ?>
 	<?php else : ?>
 		<?php // No rows found ?>
+	<?php endif; ?>
+	<?php if ( get_field( 'show_labels' ) == 1 ) : ?>
+		<?php // echo 'true'; ?>
+	<?php else : ?>
+		<?php // echo 'false'; ?>
 	<?php endif; ?>
 </div>
