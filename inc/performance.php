@@ -68,3 +68,12 @@ function enqueue_if_block_is_not_present() {
 		}
 	}
 }
+
+
+// Conditionally skip lazy loading by checking for a class
+function skip_lazy_load($value, $image, $context) {
+	if (strpos($image, 'wp-block-cover__image-background') !== false) $value = 'eager';
+
+	return $value;
+}
+add_filter('wp_img_tag_add_loading_attr', 'skip_lazy_load', 10, 3);
