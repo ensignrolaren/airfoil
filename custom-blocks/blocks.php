@@ -54,3 +54,11 @@ function rad_register_block_script() {
 	}
 }
 add_action('init', 'rad_register_block_script');
+
+// Conditionally skip lazy loading by checking for a class
+function skip_lazy_load($value, $image, $context) {
+	if (strpos($image, 'skip-lazy') !== false) $value = 'eager';
+
+	return $value;
+}
+add_filter('wp_img_tag_add_loading_attr', 'skip_lazy_load', 10, 3);
