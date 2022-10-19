@@ -4,4 +4,4 @@ function rad_happyforms_styles() {
 }
 // happyforms filters
 add_filter( 'happyforms_use_honeypot', '__return_false' );
-add_filter('happyforms_enqueue_style', '__return_false');
+// add_filter('happyforms_enqueue_style', '__return_false');

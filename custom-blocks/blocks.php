@@ -39,10 +39,18 @@ function radical_load_blocks() {
 }
 add_action('init', 'radical_load_blocks');
 
-// todo conditionally load blocks only if they're present
+// Conditionally load blocks only if they're present
+
 function rad_register_block_script() {
-	wp_register_script( 'block-carousel', get_template_directory_uri() . '/custom-blocks/carousel/carousel.js', [ 'jquery'] );
-	wp_enqueue_style('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '1.8.1');
-	wp_enqueue_script('slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery']);
+	// if we are not in the back end
+	if (!is_admin()) {
+		$id = get_the_ID();
+		// and also if there's not carousel
+		if (!has_block('rad/carousel', $id)) {
+			wp_register_script( 'block-carousel', get_template_directory_uri() . '/custom-blocks/carousel/carousel.js', [ 'jquery'] );
+			wp_enqueue_style('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '1.8.1');
+			wp_enqueue_script('slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery']);
+		}
+	}
 }
-add_action( 'init', 'rad_register_block_script' );
+add_action('init', 'rad_register_block_script');
