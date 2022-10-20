@@ -41,25 +41,25 @@ function rad_admin_assets() {
 	wp_enqueue_style('rad-custom', get_template_directory_uri() . '/css/block-editor.css');
 
 	// Enqueue fontawesome for block library icons
-	echo '<link href="https://kit.fontawesome.com/b657cfd03b.js"  rel="stylesheet">';
+	// echo '<link href="https://kit.fontawesome.com/b657cfd03b.js"  rel="stylesheet">';
 }
 add_action('admin_head', 'rad_admin_assets');
 
-//enqueue block editor assets
+// Enqueue block editor assets
 function rad_block_editor_scripts() {
 	wp_enqueue_script('theme-editor', get_template_directory_uri() . '/js/editor.js', array('wp-blocks', 'wp-dom'), filemtime(get_template_directory() . '/js/editor.js'), true);
 }
 add_action('enqueue_block_editor_assets', 'rad_block_editor_scripts');
 
-// generates faq schema for the FAQ block
+// generates faq schema for the FAQ block if present
 function rad_generate_faq_schema($schema) {
 	global $schema;
-	if (has_block('acf/frequently-asked-questions')) :
+	$id = get_the_ID();
+	if (has_block('rad/faq', $id)) :
 		echo '<script type="application/ld+json">' . json_encode($schema) . '</script>';
 	endif;
 }
 add_action('wp_footer', 'rad_generate_faq_schema', 100);
-
 
 // Add a class of js/ no-js depending on whether js is available in browser
 function rad_html_js_class() {

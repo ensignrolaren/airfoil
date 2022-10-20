@@ -39,8 +39,7 @@ function radical_load_blocks() {
 }
 add_action('init', 'radical_load_blocks');
 
-// Conditionally load blocks only if they're present
-
+// Conditionally load block assets only if they're present
 function rad_register_block_script() {
 	// if we are not in the back end
 	if (!is_admin()) {

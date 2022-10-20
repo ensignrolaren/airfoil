@@ -49,8 +49,8 @@ if (!empty($block['align'])) {
 	);
 	if (have_rows('faqs')) {
 		while (have_rows('faqs')) : the_row();
-			if (have_rows('faq_item')) {
-				while (have_rows('faq_item')) : the_row();
+			if (have_rows('faq')) {
+				while (have_rows('faq')) : the_row();
 					$questions = array(
 						'@type'          => 'Question',
 						'name'           => get_sub_field('faq_question'),
