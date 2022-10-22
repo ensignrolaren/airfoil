@@ -67,6 +67,9 @@ require get_template_directory() . '/inc/theme-setup.php';
 // Register widget area
 require get_template_directory() . '/inc/widgets.php';
 
+// Add shortcodes
+require get_template_directory() . '/inc/shortcodes.php';
+
 // Check if Woocommerce is active
 if (class_exists('Woocommerce')) {
 	// if active, load Woocommerce functions
