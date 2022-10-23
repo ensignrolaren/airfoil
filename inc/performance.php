@@ -55,6 +55,14 @@ add_action('wp_default_scripts', 'remove_jquery_migrate');
 // don't load the whole core block stylesheet on every page
 // add_filter('should_load_separate_core_block_assets', '__return_true');
 
+// stay cool bro i add this back in the parent stylesheet
+// Remove Gutenberg Block Library CSS from loading on the frontend
+function rad_remove_core_block_library_css() {
+	wp_dequeue_style('wp-block-library');
+	wp_dequeue_style('wp-block-library-theme');
+}
+add_action('wp_enqueue_scripts', 'rad_remove_core_block_library_css', 100);
+
 // dequeue jquery conditionally
 add_action('wp_enqueue_scripts', 'enqueue_if_block_is_not_present');
 function enqueue_if_block_is_not_present() {
@@ -68,7 +76,6 @@ function enqueue_if_block_is_not_present() {
 		}
 	}
 }
-
 
 // Conditionally skip lazy loading by checking for a class
 function skip_lazy_load($value, $image, $context) {
