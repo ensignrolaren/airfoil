@@ -40,6 +40,9 @@ body span.wp-color-result-text {
 GLOBAL
 +++++++++++++++++++
 */
+.block-editor-block-list__block .block-list-appender.block-list-appender {
+	margin: 0 auto;
+}
 /* group block */
 /* large padding is the default for the group block */
 .wp-block-group > .wp-block-group__inner-container {
