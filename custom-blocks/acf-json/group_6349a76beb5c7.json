@@ -67,10 +67,10 @@
                                 "id": ""
                             },
                             "choices": {
-                                "Facebook": "Facebook",
-                                "Instagram": "Instagram",
-                                "Twitter": "Twitter",
-                                "Yelp": "Yelp",
+                                "facebook": "Facebook",
+                                "instagram": "Instagram",
+                                "twitter": "Twitter",
+                                "yelp": "Yelp",
                                 "Nginx": "Nginx",
                                 "Discord": "Discord",
                                 "Youtube": "Youtube"
@@ -126,5 +126,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1665784263
+    "modified": 1666466616
 }

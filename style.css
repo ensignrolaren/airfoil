@@ -682,6 +682,13 @@ SITE FOOTER
 BLOCKS
 ===============================
 */
+/* social icons */
+.block-social-icons {
+	display: flex;
+}
+.block-social-icons .rad-social-icon {
+	margin: .4rem;
+}
 /* separators */
 .wp-block-separator {
 	border-top: 0;
@@ -947,6 +954,7 @@ td {
 .wp-block-search .wp-block-search__button  {
 	width: auto;
 	background-color: #343434;
+	appearance: none;
 	-webkit-appearance: none;
 	color: #fff;
 	font-size: 100%;
