@@ -40,18 +40,15 @@ if (!empty($block['align'])) {
 					$social_account = strtolower(get_sub_field('account'));
 					?>
 					<?php if ($link) : ?>
-						<a class="rad-social-icon <?php echo $social_account ?>" href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>">
+						<a class="rad-social-icon <?php echo $social_account ?>" href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" aria-label="Follow me on <?php echo $social_account; ?>">
 							<?php if (get_field('show_labels') == 1) : ?>
-								<?php the_sub_field('account'); ?>
+								<?php echo $social_account; ?>
 							<?php else : ?>
 								<?php // echo 'false'; 
 								?>
 							<?php endif; ?>
 						</a>
 					<?php endif; ?>
-
-
-
 				<?php endwhile; ?>
 			<?php endif; ?>
 		<?php endwhile; ?>
