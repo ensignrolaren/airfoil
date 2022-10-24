@@ -13,28 +13,6 @@ ACF UI NEATENING
 body .acf-field-623e08104927a .acf-label label {
 	display: none;
 }
-/* clean up color picker */
-body .acf-field-6155eb73e7ddd .acf-label label {
-	display: none;
-}
-body .acf-field-6155eb73e7ddd .acf-fields {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-body .acf-field-6155eb73e7ddd .acf-field-color-picker {
-	width: unset !important;
-	flex: 1 1 10%;
-}
-body .acf-field-6155eb73e7ddd .acf-field-text {
-	flex: 1 1 90%;
-}
-body .button.wp-color-result {
-	border-radius: 9999px;
-}
-body span.wp-color-result-text {
-	display: none;
-}
 /*
 +++++++++++++++++++
 GLOBAL
