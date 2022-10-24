@@ -57,11 +57,6 @@ add_action('wp_default_scripts', 'remove_jquery_migrate');
 
 // stay cool bro i add this back in the parent stylesheet
 // Remove Gutenberg Block Library CSS from loading on the frontend
-// function rad_remove_core_block_library_css() {
-// 	wp_dequeue_style('wp-block-library');
-// 	wp_dequeue_style('wp-block-library-theme');
-// }
-// add_action('wp_enqueue_scripts', 'rad_remove_core_block_library_css', 100);
 function wps_deregister_styles() {
 	wp_dequeue_style('wp-block-library');
 }
