@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Kelsey Barmettler
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.2.59
+Version: 1.2.60
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -312,10 +312,10 @@ GLOBAL LAYOUT
 	padding: 0 !important;
 }
 /* account for scrollbars!! */
-.has-scrollbar .alignfull {
+/* .has-scrollbar .alignfull {
 	width: calc(100vw - (var(--scroll-bar, 15px))) !important;
 	margin-left: calc(50% - 50vw + (var(--scroll-bar, 15px) / 2)) !important;
-}
+} */
 /* wide children will break out, but not quite full-width */
 .site-header > *,
 .site-footer > *,
@@ -323,30 +323,35 @@ GLOBAL LAYOUT
 	margin-left: calc(25% - 25vw) !important;
 	margin-right: calc(25% - 25vw) !important;
 }
-.has-scrollbar .site-header > *,
+/* .has-scrollbar .site-header > *,
 .has-scrollbar .site-footer > *
 .has-scrollbar .sidebar-wrapper > * {
 	margin-left: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
 	margin-right: calc(25% - 25vw + (var(--scroll-bar) / 4)) !important;
-}
+} */
 .alignwide {
 	margin-left: calc(25% - 25vw + (var(--padding) / 2)) !important;
 	margin-right: calc(25% - 25vw + (var(--padding) / 2)) !important;
 }
-.has-scrollbar .alignwide {
+/* this one cancels out padding, for images that need to be FULLY alignwide for example */
+.extrawide {
+	margin-left: calc(25% - 25vw - (var(--padding) / 2)) !important;
+	margin-right: calc(25% - 25vw - (var(--padding) / 2)) !important;
+}
+/* .has-scrollbar .alignwide {
 	margin-left: calc(25% - 25vw + (var(--padding) / 2) + calc( var(--scroll-bar) / 4)) !important;
 	margin-right: calc(25% - 25vw + (var(--padding) / 2) + calc( var(--scroll-bar) / 4)) !important;
-}
+} */
 /* alignwide elements that are nested in full-width elements break out of their __inner-container  */
 .alignfull .alignwide {
 	margin-left: calc(25% - 25vw + (var(--padding) / 2)) !important;
 	margin-right: calc(25% - 25vw + (var(--padding) / 2)) !important;
 }
 /* account for scrollbars!! */
-.has-scrollbar .alignfull .alignwide {
+/* .has-scrollbar .alignfull .alignwide {
 	margin-left: calc(25% - 25vw + (var(--padding) / 2) + (var(--scroll-bar) / 4)) !important;
 	margin-right: calc(25% - 25vw + (var(--padding) / 2) + (var(--scroll-bar) / 4)) !important;
-}
+} */
 /* horizontal padding for all top-level elements */
 .site-header > *,
 .site-main > *,
@@ -398,9 +403,6 @@ GLOBAL LAYOUT
 	flex-basis: 20rem;
 	flex-grow: 1;
 }
-.sidebar-wrapper .widget-area > * {
-	/* padding-left: 0 !important; */
-}
 /*
 ################################
 UTILITY CLASSES
@@ -417,14 +419,9 @@ SITE HEADER
 ################################
 */
 /* header */
-.site-header__wrapper {
-	/* position: relative;
-	top: 32px; */
-}
 .site-header__inner-container {
 	display: flex;
 	justify-content: space-between;
-
 	gap: 1rem;
 	column-gap: 1rem;
 	row-gap: 1rem;
@@ -442,9 +439,6 @@ SITE HEADER
 .custom-logo-link {
 	font-size: 0;
 }
-/* -----------------------------
-site navigation
-------------------------------*/
 /* -----------------------------
 site navigation
 ------------------------------*/
@@ -632,7 +626,6 @@ button.menu-toggle {
 	.js .main-navigation .menu .menu-item a {
 		display: block;
 	}
-
 	/* when the button's clicked */
 	.main-navigation.toggled > div:first-of-type /*this should always be the primary nav */ {
 		position: fixed;
@@ -640,15 +633,6 @@ button.menu-toggle {
 		top: 0;
 		width: 80%;
 	}
-}
-@media screen and (max-width: 1024px) {
-	
-}
-@media screen and (max-width: 768px) {
-
-}
-@media screen and (max-width: 380px) {
-	
 }
 /*
 ################################
@@ -668,8 +652,6 @@ SITE FOOTER
 .site-footer .footer-section .wp-block-columns {
 	column-gap: var(--padding);
 	row-gap: var(--padding);
-	/* margin-left: calc(var(--padding) * -1);
-	margin-right: calc(var(--padding) * -1); */
 }
 .site-footer .footer-section :where(.wp-block-columns.has-background) {
 	padding: unset;
@@ -678,7 +660,6 @@ SITE FOOTER
 .site-footer .footer-section ul {
 	list-style-type: none;
 }
-/* site credits */
 /*
 ===============================
 BLOCKS
@@ -1165,12 +1146,8 @@ COMMENTS
 	font-size: .82rem;
 	font-weight: normal;
 }
-@media screen and (max-width: 1024px) {
-}
 @media screen and (max-width: 768px) {
 	.comment-meta {
 		flex-direction: column;
 	}
-}
-@media screen and (max-width: 380px) {
 }
