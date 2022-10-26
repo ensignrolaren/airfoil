@@ -167,9 +167,6 @@ a {
 button {
 	cursor: pointer;
 }
-button:focus {
-	/* outline: auto; */
-}
 .wp-block-buttons {
 	margin-bottom: 1em;
 }
@@ -179,8 +176,8 @@ a.wp-block-button__link {
 	border: 0;
 	border-radius: 3px;
 }
-.wp-block-button__link:focus {
-	outline: auto;
+.wp-block-button:focus-within {
+	outline: -webkit-focus-ring-color auto 1px;
 }
 .wp-block-button.alignright {
 	float: none;
