@@ -11,12 +11,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php	
+	if (class_exists('ACF')) {
+		if (get_field('title_toggle') == 0) : ?>
+			<header class="entry-header">
+				<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+			</header><!-- .entry-header -->
+	<?php endif; } ?>
+	
 
-	<?php if (get_field('title_toggle') == 0) : ?>
-		<header class="entry-header">
-			<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-		</header><!-- .entry-header -->
-	<?php endif; ?>
 
 	<?php rad_post_thumbnail(); ?>
 

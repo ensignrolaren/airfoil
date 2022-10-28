@@ -18,8 +18,10 @@ function rad_body_classes( $classes ) {
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if (get_field('show_page_sidebar') == 1) {
-		$classes[] = 'has-sidebar';
+	if (class_exists('ACF')) {
+		if (get_field('show_page_sidebar') == 1) {
+			$classes[] = 'has-sidebar';
+		}
 	}
 
 	return $classes;

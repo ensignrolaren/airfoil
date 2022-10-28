@@ -9,8 +9,8 @@
 
 get_header();
 
-if (get_field('show_sidebar_on_all_posts', 'option') == 1) :
-
+$has_sidebar = get_post_meta(get_the_ID(), 'show_page_sidebar', true);
+if ($has_sidebar == 1) :
 	echo '<div class="sidebar-wrapper">';
 	echo '<div class="sidebar-wrapper__inner-container">';
 endif;
@@ -55,8 +55,7 @@ endif;
 	</main><!-- #main -->
 
 <?php
-if (get_field('show_sidebar_on_all_posts', 'option') == 1) :
-	get_sidebar();
+if ($has_sidebar == 1) :
 	echo '</div>';
 	echo '</div>';
 endif;
