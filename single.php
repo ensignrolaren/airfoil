@@ -9,17 +9,18 @@
  */
 
 get_header();
-
-// if there's a custom post header, show it here
-if (get_field('custom_blog_header', 'option') == 1) {
-	dynamic_sidebar('blog-header');
-}
-
-if (get_field('show_sidebar_on_all_posts', 'option') == 1) :
-
+if (class_exists('ACF')) :
+	// if there's a custom post header, show it here
+	if (get_field('custom_blog_header', 'option') == 1) {
+		dynamic_sidebar('blog-header');
+	}
+endif;
+$has_sidebar = get_post_meta(get_the_ID(), 'show_page_sidebar', true);
+if ($has_sidebar == 1) :
 	echo '<div class="sidebar-wrapper">';
 	echo '<div class="sidebar-wrapper__inner-container">';
 endif;
+
 ?>
 <main id="primary" class="site-main">
 
@@ -47,8 +48,7 @@ endif;
 </main><!-- #main -->
 
 <?php
-if (get_field('show_sidebar_on_all_posts', 'option') == 1) :
-	get_sidebar();
+if ($has_sidebar == 1) :
 	echo '</div>';
 	echo '</div>';
 endif;
