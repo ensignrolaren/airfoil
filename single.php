@@ -15,7 +15,7 @@ if (class_exists('ACF')) :
 		dynamic_sidebar('blog-header');
 	}
 endif;
-$has_sidebar = get_post_meta(get_the_ID(), 'show_page_sidebar', true);
+$has_sidebar = get_post_meta(get_the_ID(), 'show_sidebar_on_all_posts', true);
 if ($has_sidebar == 1) :
 	echo '<div class="sidebar-wrapper">';
 	echo '<div class="sidebar-wrapper__inner-container">';
