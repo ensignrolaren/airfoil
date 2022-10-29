@@ -68,8 +68,8 @@ function enqueue_if_block_is_not_present() {
 	// if we are not in the back end
 	if (!is_admin()) {
 		$id = get_the_ID();
-		// and also if there's not HF or carousel and there's no woocommerce
-		if (!has_block('thethemefoundry/happyforms', $id) && !has_block('rad/carousel', $id) && !class_exists('WooCommerce')) {
+		// and also if there's not HF or carousel and there's no woocommerce or Query Monitor
+		if (!has_block('thethemefoundry/happyforms', $id) && !has_block('rad/carousel', $id) && !class_exists('WooCommerce') && !class_exists('QueryMonitor')) {
 			wp_dequeue_script('jquery');
 			wp_deregister_script('jquery');
 		}
