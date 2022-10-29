@@ -1,11 +1,12 @@
 {
     "key": "group_63253c3942084",
-    "title": "Posts: Options",
+    "title": "Post Options",
     "fields": [
         {
             "key": "field_63253c397d2d8",
             "label": "Show Sidebar on All Posts",
             "name": "show_sidebar_on_all_posts",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -25,6 +26,7 @@
             "key": "field_6328eba3f5171",
             "label": "Custom Post Header",
             "name": "custom_blog_header",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "Edit the post header in Appearance > Widgets > Blog Header",
             "required": 0,
@@ -59,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663627978
+    "modified": 1667065699
 }
