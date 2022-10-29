@@ -46,7 +46,6 @@ function rad_register_block_script() {
 		$id = get_the_ID();
 		// and also if there's not carousel
 		if (!has_block('rad/carousel', $id)) {
-			wp_register_script( 'block-carousel', get_template_directory_uri() . '/custom-blocks/carousel/carousel.js', [ 'jquery'] );
 			wp_enqueue_script('slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery']);
 		}
 	}
