@@ -22,8 +22,6 @@ function radical_load_blocks() {
 	register_block_type(get_template_directory() . '/custom-blocks/faq/block.json');
 	// Copyright
 	register_block_type(get_template_directory() . '/custom-blocks/copyright/block.json');
-	// Query loop
-	register_block_type(get_template_directory() . '/custom-blocks/query-loop/block.json');
 	// Post title
 	register_block_type(get_template_directory() . '/custom-blocks/post-title/block.json');
 	// Post date
