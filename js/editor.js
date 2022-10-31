@@ -72,6 +72,10 @@ wp.domReady( () => {
 		{
 			name: 'leader',
 			label: 'Leader Text',
+		},
+		{
+			name: 'alternate',
+			label: 'Alternate',
 		}
 	]);
 	// Custom Media & Text
