@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Kelsey Barmettler
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.2.69
+Version: 1.2.70
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -468,23 +468,28 @@ site navigation
 .main-navigation .menu-item-has-children ul a {
 	display: inline-block;
 }
-@media screen and (min-width: 769px) { /* Applies ONLY to large screens */ .main-navigation .menu:first-of-type {
+@media screen and (min-width: 769px) { /* Applies ONLY to large screens */
+	.main-navigation .menu:first-of-type {
 		display: flex;
 		height: 100%;
-	} .main-navigation .menu:first-of-type > .menu-item {
+	}
+	.main-navigation .menu:first-of-type > .menu-item {
 		display: flex;
 		align-items: flex-start;
 		border-top: 5px solid transparent;
 		transition: all 250ms ease;
-	} .main-navigation .menu:first-of-type > .menu-item:hover {
+	}
+	.main-navigation .menu:first-of-type > .menu-item:hover {
 		border-top: 5px solid #f50e02;
 	}
 	/* todo do i need this? */ .main-navigation .non-clickable > a {
 		pointer-events: none;
-	} .main-navigation .non-clickable:hover > a {
+	}
+	.main-navigation .non-clickable:hover > a {
 		color: #817e73;
 		transition: color 100ms ease;
-	} .main-navigation .menu-item-has-children > a:after {
+	}
+	.main-navigation .menu-item-has-children > a:after {
 		content: "\203A";
 		transform: rotate(90deg);
 		transition: transform 250ms ease;
@@ -492,9 +497,11 @@ site navigation
 		position: relative;
 		top: 2px;
 		left: .75ch;
-	} .main-navigation .sub-menu li a:after {
+	}
+	.main-navigation .sub-menu li a:after {
 		display: none; 
-	} .main-navigation .sub-menu {
+	}
+	.main-navigation .sub-menu {
 		display: none;
 		background-color: #fff;
 		width: 220px;
@@ -507,7 +514,8 @@ site navigation
 		box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
 		border-bottom: 4px solid #111c35;
 		margin: 0;
-	} .main-navigation .menu-item-has-children:hover .sub-menu {
+	}
+	.main-navigation .menu-item-has-children:hover .sub-menu {
 		display: block;
 	}
 }
@@ -532,7 +540,8 @@ button.menu-toggle {
 }
 @media screen and (max-width: 768px) { .js .main-navigation {
 		justify-content: center;
-	} .js #close {
+	}
+	.js #close {
 		text-transform: uppercase;
 		display: flex;
 		width: 100%;
@@ -541,25 +550,30 @@ button.menu-toggle {
 		border: none;
 		border-radius: 0;
 		cursor: pointer;
-	} .close-button {
+	}
+	.close-button {
 		padding: 1rem;
 		background-color: #343435;
 		color: #fff;
 		justify-content: flex-end;
-	} .close-button:after {
+	}
+	.close-button:after {
 		content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-0.94 -21.28 574.94 525.29'%3E%3Cpath d='M574 87.922 542.078 56l-192.08 192.08L157.918 56l-31.922 31.922 192.08 192.08-192.08 192.08 31.922 31.922 192.08-192.08 192.08 192.08L574 472.082l-192.08-192.08z'/%3E%3C/svg%3E%0A");
 		flex: 0 0 1rem;
 		margin-left: .5rem;
 		filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 	}
-	/* show hamburger on mobile */ .js button.menu-toggle {
+	/* show hamburger on mobile */
+	.js button.menu-toggle {
 		display: block;
 		line-height: 1;
-	} .js .main-navigation {
+	}
+	.js .main-navigation {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
-	} .js .main-navigation > div:first-of-type /*this should always be the primary nav */ {
+	}
+	.js .main-navigation > div:first-of-type /*this should always be the primary nav */ {
 		display: flex;
 		flex-direction: column-reverse;
 		background-color: #454545;
@@ -572,27 +586,37 @@ button.menu-toggle {
 		z-index: 999;
 		justify-content: space-between;
 	}
-	/* scooch down to make room for wp admin bar */ .js .logged-in .main-navigation > div:first-of-type {
+	/* scooch down to make room for wp admin bar */
+	.js .logged-in .main-navigation > div:first-of-type {
 		top: 46px;
 		height: calc(100% - 46px);
-	} .js .main-navigation .menu {
+	}
+	.js .main-navigation .menu {
 		padding: 0 1rem;
-	} .main-navigation .sub-menu .menu-item {
+	}
+	.main-navigation .sub-menu .menu-item {
 		font-size: 1rem;
-	} .js .main-navigation .menu .menu-item {
+	}
+	.js .main-navigation .menu > .menu-item {
 		padding: 0;
 		display: block;
-	} .js .main-navigation .menu .menu-item a {
-		padding: 1rem;
 		border-bottom: 1px solid #e3e3e3;
-	} .js .main-navigation .sub-menu {
+	}
+	.js .main-navigation .menu .menu-item a {
+		padding: 1rem;
+	}
+	.js .main-navigation .sub-menu {
 		padding: 0;
 		margin: 0;
-	} .js .main-navigation .non-clickable {
+		border-top: 1px solid #e3e3e3;
+	}
+	.js .main-navigation .non-clickable {
 		padding: 0;
-	} .js .main-navigation .menu .menu-item.non-clickable > a {
+	}
+	.js .main-navigation .menu .menu-item.non-clickable > a {
 		border-bottom: none;
-	} .js .main-navigation .menu .menu-item a {
+	}
+	.js .main-navigation .menu .menu-item a {
 		display: block;
 	}
 	/* when the button's clicked */ .main-navigation.toggled > div:first-of-type /*this should always be the primary nav */ {
@@ -634,10 +658,10 @@ BLOCKS
 ===============================
 */
 /* social icons */
-.block-social-icons {
+.rad-social-icons {
 	display: flex;
 }
-.block-social-icons .rad-social-icon {
+.rad-social-icons .rad-social-icon {
 	margin: .4rem;
 }
 /* separators */
@@ -849,25 +873,32 @@ td {
 }
 @media screen and (max-width: 600px) { .rad-timeline__event-spacer, .rad-timeline__event .rad-timeline__event-inner {
 		padding-bottom: 2rem;
-	} .rad-timeline__event:nth-of-type(even) .rad-timeline__event-inner, .rad-timeline__event .rad-timeline__event-inner {
+	}
+	.rad-timeline__event:nth-of-type(even) .rad-timeline__event-inner, .rad-timeline__event .rad-timeline__event-inner {
 		border: none;
-	} .rad-timeline__event {
+	}
+	.rad-timeline__event {
 		flex-wrap: wrap;
-	} .rad-timeline__event:nth-of-type(odd) .rad-timeline__event-inner, .rad-timeline__event:nth-of-type(even) .rad-timeline__event-inner {
+	}
+	.rad-timeline__event:nth-of-type(odd) .rad-timeline__event-inner, .rad-timeline__event:nth-of-type(even) .rad-timeline__event-inner {
 		padding-right: 0;
 		padding-left: 0;
-	} .rad-timeline__event-spacer, .rad-timeline__event .rad-timeline__event-inner {
+	}
+	.rad-timeline__event-spacer, .rad-timeline__event .rad-timeline__event-inner {
 		flex: 1 1 100%;
 		max-width: 100%;
-	} .rad-timeline__event-spacer {
+	}
+	.rad-timeline__event-spacer {
 		display: none;
-	} .rad-timeline__event .rad-timeline__event-inner .acf-innerblocks-container:after {
+	}
+	.rad-timeline__event .rad-timeline__event-inner .acf-innerblocks-container:after {
 		height: 2rem;
 		width: 2px;
 		border-width: 0 2px 0 0;
 		right: 50%;
 		bottom: -2rem;
-	} .rad-timeline__event:nth-of-type(even) .rad-timeline__event-inner .acf-innerblocks-container:after {
+	}
+	.rad-timeline__event:nth-of-type(even) .rad-timeline__event-inner .acf-innerblocks-container:after {
 		left: 50%;
 		bottom: -2rem;
 	}
@@ -1004,7 +1035,7 @@ POSTS ARCHIVE
 .widget-area {
 	/* padding-top: var(--padding); */
 }
-.widget {
+.widget:not(.widget_nav_menu) {
 	padding: calc(var(--padding) / 2);
 }
 .widget .wp-block-group__inner-container {
