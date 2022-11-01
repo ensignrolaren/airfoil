@@ -406,3 +406,7 @@ FAQs
 .rad-faq__separator:last-of-type {
 	display: none;
 }
+/* social icons */
+.rad-social-icons a {
+	pointer-events: none;
+}
