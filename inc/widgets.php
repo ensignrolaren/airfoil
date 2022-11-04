@@ -1,11 +1,27 @@
 <?php
+// pre-header
+function rad_preheader_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Pre-Header', 'rad'),
+			'id'            => 'preheader',
+			'description'   => esc_html__('Add blocks here.', 'rad'),
+			'before_widget' => '<section id="%1$s" class="preheader %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<p class="pre-header-title">',
+			'after_title'   => '</p>',
+		)
+	);
+}
+add_action('widgets_init', 'rad_preheader_init');
+
 // 'sidebar' (or wherever the theme places them) area widgets
 function rad_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'rad' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'rad' ),
+			'description'   => esc_html__( 'Add blocks here.', 'rad' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',

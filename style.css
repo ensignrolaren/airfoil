@@ -406,6 +406,10 @@ GLOBAL LAYOUT
 SITE HEADER
 ################################
 */
+/* preheader */
+.preheader :last-child {
+	margin-bottom: 0;
+}
 /* header */
 .site-header__inner-container {
 	display: flex;
@@ -481,7 +485,6 @@ button.menu-toggle {
 	font-size: 100%;
 	appearance: none;
 }
-
 /*
 ################################
  SITE MAIN
@@ -851,7 +854,6 @@ POSTS ARCHIVE
 .post-navigation {
 	margin-top: var(--padding);
 }
-
 /*
 ============================
  WIDGET AREA / SIDEBAR / ADD'L BLOCK AREAS
