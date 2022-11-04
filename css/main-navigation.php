@@ -112,6 +112,11 @@ header('Cache-control: must-revalidate');
 		z-index: 999;
 		justify-content: space-between;
 	}
+	/* scooch down to make room for wp admin bar */
+	.js .logged-in .main-navigation > div:first-of-type {
+		top: 32px;
+		height: calc(100% - 32px);
+	}
 	.js .main-navigation .menu {
 		padding: 0 1rem;
 	}
@@ -139,5 +144,12 @@ header('Cache-control: must-revalidate');
 		position: fixed;
 		left: 0;
 		width: 80%;
+	}
+}
+@media screen and (max-width: 781px) {
+	/* scooch down to make room for wp admin bar */
+	.js .logged-in .main-navigation > div:first-of-type {
+		top: 46px;
+		height: calc(100% - 46px);
 	}
 }

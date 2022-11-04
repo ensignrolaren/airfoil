@@ -481,20 +481,7 @@ button.menu-toggle {
 	font-size: 100%;
 	appearance: none;
 }
-@media screen and (min-width: 782px) {
-	/* scooch down to make room for wp admin bar */
-	.js .logged-in .main-navigation > div:first-of-type {
-		top: 32px;
-		height: calc(100% - 32px);
-	}
-}
-@media screen and (max-width: 781px) {
-	/* scooch down to make room for wp admin bar */
-	.js .logged-in .main-navigation > div:first-of-type {
-		top: 46px;
-		height: calc(100% - 46px);
-	}
-}
+
 /*
 ################################
  SITE MAIN
