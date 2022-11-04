@@ -23,7 +23,7 @@ function rad_body_open() {
 	if (class_exists('ACF')) {
 		$normal_width = get_field('normal_content_width', 'option');
 	}
-	?>
+?>
 	<style>
 		:root {
 			--normal-width: <?php echo $normal_width; ?>px;

@@ -1,0 +1,156 @@
+<?php header("Content-type: text/css; charset: UTF-8");
+if (class_exists('ACF')) {
+	$bare_breakpoint = get_field('mobile_menu_breakpoint', 'option');
+	$mobile_menu_breakpoint = $bare_breakpoint . 'px';
+	$desktop_breakpoint = $bare_breakpoint++ . 'px';
+} else {
+	// $mobile_menu_breakpoint = 768 . 'px';
+	// $desktop_breakpoint = 769 . 'px';
+	$bare_breakpoint = 768;
+	$mobile_menu_breakpoint = $bare_breakpoint . 'px';
+	$desktop_breakpoint = $bare_breakpoint + 1 . 'px';
+}
+								
+?>
+
+@media screen and (min-width: <?php echo $desktop_breakpoint; ?>) { /* Applies ONLY to large screens */
+	.main-navigation .menu:first-of-type {
+		display: flex;
+		height: 100%;
+	}
+	.main-navigation .menu:first-of-type > .menu-item {
+		display: flex;
+		align-items: flex-start;
+		border-top: 5px solid transparent;
+		transition: all 250ms ease;
+	}
+	.main-navigation .menu:first-of-type > .menu-item:hover {
+		border-top: 5px solid #f50e02;
+	}
+	/* todo do i need this? */ .main-navigation .non-clickable > a {
+		pointer-events: none;
+	}
+	.main-navigation .non-clickable:hover > a {
+		color: #817e73;
+		transition: color 100ms ease;
+	}
+	.main-navigation .menu-item-has-children > a:after {
+		content: "\203A";
+		transform: rotate(90deg);
+		transition: transform 250ms ease;
+		display: inline-block;
+		position: relative;
+		top: 2px;
+		left: .75ch;
+	}
+	.main-navigation .sub-menu li a:after {
+		display: none; 
+	}
+	.main-navigation .sub-menu {
+		display: none;
+		background-color: #fff;
+		width: 220px;
+		position: absolute;
+		top: calc(50% + 1.5rem);
+		bottom: calc(50% - 1.5rem);
+		left: 0;
+		z-index: 9999;
+		-webkit-box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
+		box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
+		border-bottom: 4px solid #111c35;
+		margin: 0;
+	}
+	.main-navigation .menu-item-has-children:hover .sub-menu {
+		display: block;
+	}
+}
+/* smaller screen styles & behavior */
+@media screen and (max-width: <?php echo $mobile_menu_breakpoint; ?>) {
+	.js .main-navigation {
+		justify-content: center;
+	}
+	.js #close {
+		text-transform: uppercase;
+		display: flex;
+		width: 100%;
+		font-size: 100%;
+		text-align: right;
+		border: none;
+		border-radius: 0;
+		cursor: pointer;
+	}
+	.close-button {
+		padding: 1rem;
+		background-color: #343435;
+		color: #fff;
+		justify-content: flex-end;
+	}
+	.close-button:after {
+		content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-0.94 -21.28 574.94 525.29'%3E%3Cpath d='M574 87.922 542.078 56l-192.08 192.08L157.918 56l-31.922 31.922 192.08 192.08-192.08 192.08 31.922 31.922 192.08-192.08 192.08 192.08L574 472.082l-192.08-192.08z'/%3E%3C/svg%3E%0A");
+		flex: 0 0 1rem;
+		margin-left: .5rem;
+		filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+	}
+	/* show hamburger on mobile if there's js */
+	.js button.menu-toggle {
+		display: block;
+		line-height: 1;
+	}
+	.js .main-navigation {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.js .main-navigation > div:first-of-type /*this should always be the primary nav */ {
+		display: flex;
+		flex-direction: column-reverse;
+		background-color: #454545;
+		position: fixed;
+		left: -300px;
+		top: 0;
+		width: 300px;
+		height: 100%;
+		transition: all 300ms ease-in-out;
+		z-index: 999;
+		justify-content: space-between;
+	}
+	/* scooch down to make room for wp admin bar */
+	.js .logged-in .main-navigation > div:first-of-type {
+		top: 46px;
+		height: calc(100% - 46px);
+	}
+	.js .main-navigation .menu {
+		padding: 0 1rem;
+	}
+	.main-navigation .sub-menu .menu-item {
+		font-size: 1rem;
+	}
+	.js .main-navigation .menu > .menu-item {
+		padding: 0;
+		display: block;
+		border-bottom: 1px solid #e3e3e3;
+	}
+	.js .main-navigation .menu .menu-item a {
+		padding: 1rem;
+	}
+	.js .main-navigation .sub-menu {
+		padding: 0;
+		margin: 0;
+		border-top: 1px solid #e3e3e3;
+	}
+	.js .main-navigation .non-clickable {
+		padding: 0;
+	}
+	.js .main-navigation .menu .menu-item.non-clickable > a {
+		border-bottom: none;
+	}
+	.js .main-navigation .menu .menu-item a {
+		display: block;
+	}
+	/* when the button's clicked */ .main-navigation.toggled > div:first-of-type /*this should always be the primary nav */ {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 80%;
+	}
+}
