@@ -3,46 +3,26 @@
     "title": "Theme Layout Options",
     "fields": [
         {
-            "key": "field_630ac953e4250",
-            "label": "Padding",
-            "name": "padding",
-            "type": "number",
-            "instructions": "Number",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "rem",
-            "min": 1,
-            "max": 4,
-            "step": 1
-        },
-        {
             "key": "field_630aceaea9983",
             "label": "Normal content width",
             "name": "normal_content_width",
+            "aria-label": "",
             "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "placeholder": 800,
-            "prepend": "",
-            "append": "px",
             "min": 400,
             "max": 1600,
-            "step": 10
+            "placeholder": 800,
+            "step": 10,
+            "prepend": "",
+            "append": "px"
         }
     ],
     "location": [
@@ -63,5 +43,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662503783
+    "modified": 1667593322
 }

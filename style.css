@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Kelsey Barmettler
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.2.72
+Version: 1.2.73
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -69,42 +69,6 @@ img {
 TYPOGRAPHY
 ################################
 */
-body {
-	font-size: clamp(1rem, calc(1rem + ((1vw - 0.48rem) * 0.3472)), 1.25rem);
-	min-height: 0vw;
-	line-height: 1.65;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: bold;
-	line-height: 1.07;
-	margin-bottom: 1.3657rem;
-}
-h1 {
-	font-size: clamp(3.5rem, calc(3.5rem + ((1vw - 0.48rem) * -1.0417)), 2.75rem);
-	min-height: 0vw;
-}
-h2 {
-	font-size: clamp(2.5rem, calc(2.5rem + ((1vw - 0.48rem) * -0.6944)), 2rem);
-	min-height: 0vw;
-}
-h3 {
-	font-size: clamp(2rem, calc(2rem + ((1vw - 0.48rem) * -0.3472)), 1.75rem);
-	min-height: 0vw;
-}
-h4 {
-	font-size: clamp(1.5rem, calc(1.5rem + ((1vw - 0.48rem) * -0.2778)), 1.3rem);
-	min-height: 0vw;
-}
-h5,
-h6 {
-	font-size: clamp(1.25rem, calc(1.25rem + ((1vw - 0.48rem) * -0.1389)), 1.15rem);
-	min-height: 0vw;
-}
 :root {
 	--rad-font-size-small: clamp(13px, calc(0.8125rem + ((1vw - 7.68px) * 0.1736)), 15px);
 	--rad-font-size-regular: clamp(16px, calc(1rem + ((1vw - 7.68px) * 0.1736)), 18px);
@@ -152,6 +116,43 @@ body .has-huge-font-size {
 	font-size: var(--rad-font-size-large-huge, 72px);
 	min-width: 0vw;
 }
+body {
+	font-size: var(--rad-font-size-regular);
+	min-height: 0vw;
+	line-height: 1.65;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+	line-height: 1.07;
+	margin-bottom: 1.3657rem;
+}
+h1 {
+	font-size: var(--rad-font-size-huge);
+	min-height: 0vw;
+}
+h2 {
+	font-size: var(--rad-font-size-larger);
+	min-height: 0vw;
+}
+h3 {
+	font-size: var(--rad-font-size-large);
+	min-height: 0vw;
+}
+h4 {
+	font-size: var(--rad-font-size-extra-medium);
+	min-height: 0vw;
+}
+h5,
+h6 {
+	font-size: var(--rad-font-size-medium);
+	min-height: 0vw;
+}
+
 p {
 	margin-bottom: 1rem;
 	line-height: 1.67;
@@ -480,7 +481,20 @@ button.menu-toggle {
 	font-size: 100%;
 	appearance: none;
 }
-
+@media screen and (min-width: 782px) {
+	/* scooch down to make room for wp admin bar */
+	.js .logged-in .main-navigation > div:first-of-type {
+		top: 32px;
+		height: calc(100% - 32px);
+	}
+}
+@media screen and (max-width: 781px) {
+	/* scooch down to make room for wp admin bar */
+	.js .logged-in .main-navigation > div:first-of-type {
+		top: 46px;
+		height: calc(100% - 46px);
+	}
+}
 /*
 ################################
  SITE MAIN
@@ -850,38 +864,7 @@ POSTS ARCHIVE
 .post-navigation {
 	margin-top: var(--padding);
 }
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-}
-.post-navigation .nav-links {
-}
-.comment-navigation .nav-previous a,
-.posts-navigation .nav-previous a,
-.post-navigation .nav-previous a {
-}
 
-.comment-navigation .nav-next a,
-.posts-navigation .nav-next a,
-.post-navigation .nav-next a {
-}
-.comment-navigation a,
-.post-navigation a,
-.post-navigation a {
-}
-.nav-previous a::before,
-.nav-next a::before {
-}
-.nav-previous a::before {
-}
-.nav-next a {
-}
-.nav-next a::before {
-}
-.nav-subtitle {
-}
-.nav-title {
-}
 /*
 ============================
  WIDGET AREA / SIDEBAR / ADD'L BLOCK AREAS
@@ -929,7 +912,8 @@ COMMENTS
 }
 .comment-body .reply {
 	text-transform: uppercase;
-	font-size: .82rem;
+	font-size: var(--rad-font-size-small);
+	min-height: 0vw;
 	margin: .5rem 0;
 	text-align: right;
 }
@@ -955,7 +939,8 @@ COMMENTS
 	margin-bottom: .5rem;
 }
 .comment-metadata {
-	font-size: .82rem;
+	font-size: var(--rad-font-size-small);
+	min-height: 0vw;
 }
 .comment-content {
 	border: 1px solid #777;
@@ -968,10 +953,12 @@ COMMENTS
 	margin-bottom: 0;
 }
 .comment-form .logged-in-as {
-	font-size: .82rem;
+	font-size: var(--rad-font-size-small);
+	min-height: 0vw;
 }
 .comment-form label[for=comment] {
-	font-size: .82rem;
+	font-size: var(--rad-font-size-small);
+	min-height: 0vw;
 }
 .comment-form-comment textarea {
 	max-width: 100%;
@@ -983,7 +970,8 @@ COMMENTS
 	align-items: baseline;
 }
 .comment-reply-title small {
-	font-size: .82rem;
+	font-size: var(--rad-font-size-small);
+	min-height: 0vw;
 	font-weight: normal;
 }
 @media screen and (max-width: 768px) { .comment-meta {

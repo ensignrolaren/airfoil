@@ -112,11 +112,6 @@ header('Cache-control: must-revalidate');
 		z-index: 999;
 		justify-content: space-between;
 	}
-	/* scooch down to make room for wp admin bar */
-	.js .logged-in .main-navigation > div:first-of-type {
-		top: 46px;
-		height: calc(100% - 46px);
-	}
 	.js .main-navigation .menu {
 		padding: 0 1rem;
 	}
