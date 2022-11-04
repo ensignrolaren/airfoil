@@ -3,15 +3,6 @@
 function rad_frontend_assets() {
 	wp_enqueue_style(get_template_directory_uri() . '/style.css');
 
-	// wp_style_add_data('rad-style', 'rtl', 'replace');
-
-	// enqueue scripts
-	// wp_enqueue_script('rad-scrollbar-fix', get_template_directory_uri() . '/js/scrollbar-fix.js', array(), _S_VERSION, true);
-	// todo use wordpress function rather than ACF
-
-	// wp_dequeue_style('wp-block-library');
-	// wp_deregister_style('wp-block-library');
-
 	// Only enqueue some extra scripts if the options page says we want them
 	if (class_exists('ACF')) {
 		if (get_field('responsive_menu', 'option') == 'responsive-menu') {
@@ -47,9 +38,6 @@ add_filter('script_loader_tag', 'rad_defer_scripts', 10, 3);
 // Enqueue scripts and styles for admin
 function rad_admin_assets() {
 	wp_enqueue_style('rad-custom', get_template_directory_uri() . '/css/block-editor.css');
-
-	// Enqueue fontawesome for block library icons
-	// echo '<link href="https://kit.fontawesome.com/b657cfd03b.js"  rel="stylesheet">';
 }
 add_action('admin_head', 'rad_admin_assets');
 
