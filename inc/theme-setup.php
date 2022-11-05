@@ -101,6 +101,24 @@ if ( ! function_exists( 'rad_setup' ) ) :
 			)
 		));
 
+		// Support Colors (grabs colors from the child theme > theme-colors.php)
+		function radical_colors_css() {
+			$colors = get_theme_support('editor-color-palette');
+			if (!empty($colors)) {
+				echo '<style type="text/css">';
+				echo ':root {';
+				foreach ($colors[0] as $color) {
+					echo '--wp--preset--color--' . $color['slug'] . ': ' . $color['color'] . '; ';
+				}
+				echo '}';
+				foreach ($colors[0] as $color) {
+					echo '.has-' . $color['slug'] . '-background-color{background-color: ' . $color['color'] . ' !important;}.has-' . $color['slug'] . '-color{color: ' . $color['color'] . ' !important;}';
+				}
+				echo '</style>';
+			}
+		}
+		add_action('wp_head', 'radical_colors_css');
+
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
