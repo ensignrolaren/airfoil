@@ -206,6 +206,8 @@ ul.wp-block-rss.alignright {
 .wp-block-columns {
 	display: flex;
 	margin-bottom: 1.75em;
+	column-gap: 2rem;
+	row-gap: 2rem;
 	box-sizing: border-box;
 	flex-wrap: wrap !important;
 	align-items: normal !important;
