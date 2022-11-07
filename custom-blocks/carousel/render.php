@@ -35,7 +35,7 @@ endif;
 if (get_field('autoplay_speed')) :
 	$autoplayspeed = get_field('autoplay_speed');
 else :
-	$autoplay = '1500';
+	$autoplayspeed = '1500';
 endif;
 
 // arrows

@@ -518,6 +518,7 @@ ul.wp-block-rss.alignright {
 .wp-block-cover-image .wp-block-cover__inner-container {
 	width: 100%;
 	z-index: 1;
+	opacity: 1;
 	color: #fff;
 }
 .wp-block-cover-image.is-light .wp-block-cover__inner-container,
