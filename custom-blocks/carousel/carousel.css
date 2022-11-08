@@ -16,7 +16,7 @@
 	height: 100%;
 	width: 100%;
 }
-.rad-carousel-item__inner :first-child {
+.rad-carousel-item__inner > :first-child {
 	padding-left: 10%;
 	padding-right: 10%;
 }
