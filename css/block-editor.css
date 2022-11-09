@@ -3,7 +3,88 @@
 type
 +++++++++++++++++++
 */
-
+:root {
+	--rad-font-size-small: clamp(13px, calc(0.8125rem + ((1vw - 7.68px) * 0.1736)), 15px);
+	--rad-font-size-regular: clamp(16px, calc(1rem + ((1vw - 7.68px) * 0.1736)), 18px);
+	--rad-font-size-extra-regular: clamp(20px, calc(1.25rem + ((1vw - 7.68px) * 0.1736)), 22px);
+	--rad-font-size-medium: clamp(24px, calc(1.5rem + ((1vw - 7.68px) * 0.2604)), 27px);
+	--rad-font-size-extra-medium: clamp(30px, calc(1.875rem + ((1vw - 7.68px) * 0.1736)), 32px);
+	--rad-font-size-large: clamp(38px, calc(2.375rem + ((1vw - 7.68px) * 0.3472)), 42px);
+	--rad-font-size-larger: clamp(48px, calc(3rem + ((1vw - 7.68px) * 0.5208)), 54px);
+	--rad-font-size-huge: clamp(58px, calc(3.625rem + ((1vw - 7.68px) * 0.3472)), 62px);
+	--rad-font-size-large-huge: clamp(68px, calc(4.25rem + ((1vw - 7.68px) * 0.3472)), 72px);
+}
+body .has-small-font-size {
+	font-size: var(--rad-font-size-small, 12px) !important;
+	min-height: 0vw;
+}
+body .has-regular-font-size {
+	font-size: var(--rad-font-size-regular, 16px) !important;
+	min-height: 0vw;
+}
+body .has-extra-regular-font-size {
+	font-size: var(--rad-font-size-extra-regular, 18px) !important;
+	min-height: 0vw;
+}
+body .has-medium-font-size {
+	font-size: var(--rad-font-size-medium, 24px) !important;
+	min-height: 0vw;
+}
+body .has-extra-medium-font-size {
+	font-size: var(--rad-font-size-extra-medium, 28px) !important;
+	min-height: 0vw;
+}
+body .has-large-font-size {
+	font-size: var(--rad-font-size-large, 36px) !important;
+	min-height: 0vw;
+}
+body .has-x-large-font-size {
+	font-size: var(--rad-font-size-larger, 44px) !important;
+	min-height: 0vw;
+}
+body .has-huge-font-size {
+	font-size: var(--rad-font-size-huge, 55px);
+	min-width: 0vw;
+}
+.has-big-mclargehuge-font-size {
+	font-size: var(--rad-font-size-large-huge, 72px);
+	min-width: 0vw;
+}
+body .editor-styles-wrapper {
+	font-size: var(--rad-font-size-regular);
+	min-height: 0vw;
+	line-height: 1.65;
+}
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	line-height: 1.07;
+	margin-bottom: 1.3657rem;
+}
+.editor-styles-wrapper h1 {
+	font-size: var(--rad-font-size-huge);
+	min-height: 0vw;
+}
+.editor-styles-wrapper h2 {
+	font-size: var(--rad-font-size-larger);
+	min-height: 0vw;
+}
+.editor-styles-wrapper h3 {
+	font-size: var(--rad-font-size-large);
+	min-height: 0vw;
+}
+.editor-styles-wrapper h4 {
+	font-size: var(--rad-font-size-extra-medium);
+	min-height: 0vw;
+}
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	font-size: var(--rad-font-size-medium);
+	min-height: 0vw;
+}
 /*
 +++++++++++++++++++
 ACF UI NEATENING
@@ -72,40 +153,7 @@ body .editor-styles-wrapper .wp-block.limited-width {
 .dashicons-layout:before {
 	color: #ff0096;
 }
-/*
-+++++++++++++++++++
-TYPOGRAPHY
-+++++++++++++++++++
-*/
-body .editor-styles-wrapper {
-	font-size: 18px;
-	font-display: optional;
-	line-height: 1.67;
-	color: #111c35;
-	background-color: #fff;
-}
-.editor-styles-wrapper h1,
-.editor-styles-wrapper h2,
-.editor-styles-wrapper h3,
-.editor-styles-wrapper h4,
-.editor-styles-wrapper h5,
-.editor-styles-wrapper h6 {
-	line-height: 1.12;
-	margin-bottom: 1rem;
-	color: inherit;
-}
-.editor-styles-wrapper h1.is-style-leader,
-.editor-styles-wrapper h2.is-style-leader,
-.editor-styles-wrapper h3.is-style-leader,
-.editor-styles-wrapper h4.is-style-leader,
-.editor-styles-wrapper h5.is-style-leader,
-.editor-styles-wrapper h6.is-style-leader {
-	line-height: 1.12;
-	margin-bottom: 1rem;
-	text-transform: uppercase;
-	color: inherit;
-	letter-spacing: 1px;
-}
+
 
 /*
 +++++++++++++++++++
