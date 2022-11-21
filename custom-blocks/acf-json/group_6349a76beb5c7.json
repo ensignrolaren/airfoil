@@ -73,11 +73,12 @@
                             "choices": {
                                 "facebook": "Facebook",
                                 "instagram": "Instagram",
+                                "pinterest": "Pinterest",
                                 "twitter": "Twitter",
                                 "yelp": "Yelp",
                                 "linkedin": "LinkedIn",
-                                "Discord": "Discord",
-                                "Youtube": "Youtube"
+                                "discord": "Discord",
+                                "youtube": "Youtube"
                             },
                             "default_value": false,
                             "return_format": "value",
@@ -131,5 +132,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1668012376
+    "modified": 1669053270
 }
