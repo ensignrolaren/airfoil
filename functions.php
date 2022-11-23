@@ -37,8 +37,11 @@ require get_template_directory() . '/inc/custom-header.php';
 // Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
 
-// Enable breadcrumbs
-require_once get_template_directory() . '/custom-blocks/blocks.php';
+if (is_plugin_active('radical-blocks/blocks.php')) {
+	// nuffin
+} else {
+	// require_once get_template_directory() . '/custom-blocks/blocks.php';
+}
 
 // Check if happyforms is active
 if (class_exists('Happyforms')) {
