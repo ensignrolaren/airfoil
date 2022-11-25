@@ -53,7 +53,7 @@ function remove_jquery_migrate($cripts) {
 add_action('wp_default_scripts', 'remove_jquery_migrate');
 
 // don't load the whole core block stylesheet on every page
-// add_filter('should_load_separate_core_block_assets', '__return_true');
+add_filter('should_load_separate_core_block_assets', '__return_true');
 
 // stay cool bro i add this back in the parent stylesheet
 // Remove Gutenberg Block Library CSS from loading on the frontend
