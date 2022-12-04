@@ -546,12 +546,14 @@ BLOCKS
 }
 .wp-block-separator.is-style-spacer {
 	background: none transparent;
+	border: none;
 	max-width: unset;
 	margin-left: auto;
 	margin-right: auto;
 }
 .wp-block-separator.is-style-small-spacer {
 	background: none transparent;
+	border: none;
 	max-width: unset;
 	margin: 1.5rem auto;
 }
