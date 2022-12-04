@@ -78,6 +78,22 @@ wp.domReady( () => {
 			label: 'Alternate',
 		}
 	]);
+	// Custom button styles
+	wp.blocks.unregisterBlockStyle(
+		'core/button',
+		[ 'fill', 'outline' ]
+	);
+	wp.blocks.registerBlockStyle( 'core/button', [ 
+		{
+			name: 'default',
+			label: 'Default',
+			isDefault: true,
+		},
+		{
+			name: 'alternate',
+			label: 'Alternate',
+		}
+	]);
 	// Custom Media & Text
 	wp.blocks.registerBlockStyle( 'core/media-text', [ 
 		{
