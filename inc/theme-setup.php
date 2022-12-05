@@ -156,12 +156,16 @@ if ( ! function_exists( 'rad_setup' ) ) :
 			];
 		});
 
-		// adds a class to the body if there's js enabled or not
-		// function rad_html_js_class() {
-		// 	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>' . "\n";
-		// }
-		// add_action('wp_head', 'rad_html_js_class', 1);
-	} endif;
+		// Don't support stupid new block layout classes
+		function rad_filter_block_type_metadata($metadata) {
+			if (isset($metadata['supports']['__experimentalLayout'])) {
+				$metadata['supports']['__experimentalLayout'] = false;
+			}
+			return $metadata;
+		}
+		add_filter('block_type_metadata', 'rad_filter_block_type_metadata');
+	}
+endif;
 add_action( 'after_setup_theme', 'rad_setup' );
 
 // let's call this 'lowercase_p_dangit'...
