@@ -51,7 +51,6 @@ header('Cache-control: must-revalidate');
 		width: 220px;
 		position: absolute;
 		top: calc(50% + 1.5rem);
-		bottom: calc(50% - 1.5rem);
 		left: 0;
 		z-index: 9999;
 		-webkit-box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
