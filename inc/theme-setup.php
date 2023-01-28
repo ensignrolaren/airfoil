@@ -127,7 +127,7 @@ if ( ! function_exists( 'rad_setup' ) ) :
 			'custom-logo',
 			array(
 				'height'      => 350,
-				'width'       => 150,
+				'width'       => 350,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
@@ -137,6 +137,7 @@ if ( ! function_exists( 'rad_setup' ) ) :
 		add_theme_support('align-wide');
 		
 		// disable full screen editor by default
+		// another great decision, matt. 🙄
 		if (is_admin()) {
 			function rad_disable_editor_fullscreen_by_default() {
 				$script = "jQuery( window ).load(function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
@@ -156,7 +157,8 @@ if ( ! function_exists( 'rad_setup' ) ) :
 			];
 		});
 
-		// Don't support stupid new block layout classes
+		// Don't support stupid freaking new block layout classes
+		// Apparently breaking CSS changes are just something Wordpress does now
 		function rad_filter_block_type_metadata($metadata) {
 			if (isset($metadata['supports']['__experimentalLayout'])) {
 				$metadata['supports']['__experimentalLayout'] = false;
@@ -169,8 +171,9 @@ endif;
 add_action( 'after_setup_theme', 'rad_setup' );
 
 // let's call this 'lowercase_p_dangit'...
-// wordpress really shouldn't use its power to silently force edits to the users content
+// wordpress really shouldn't silently edit user content
 // this is really basic, obvious stuff, matt.
+// I cannot believe I have to add this to prevent my own $%$%&$ software from secretly editing my content 
 remove_filter( 'the_title', 'capital_P_dangit', 11 );
 remove_filter( 'the_content', 'capital_P_dangit', 11 );
 remove_filter( 'comment_text', 'capital_P_dangit', 31 );

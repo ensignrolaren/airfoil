@@ -455,9 +455,6 @@ FAQs
 	display: none;
 }
 /* social icons */
-.rad-social-icons {
-	display: flex;
-}
 .rad-social-icons a {
 	pointer-events: none;
 }

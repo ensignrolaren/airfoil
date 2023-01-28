@@ -37,6 +37,7 @@ require get_template_directory() . '/inc/custom-header.php';
 // Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
 
+// remove this later
 if (!is_plugin_active('radical-blocks/blocks.php')) {
 	require_once get_template_directory() . '/custom-blocks/blocks.php';
 }

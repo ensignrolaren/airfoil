@@ -3,7 +3,7 @@ Theme Name: Radical
 Author: Kelsey Barmettler
 Author URI: http://radicaladvantagedigital.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.2.89
+Version: 1.2.90
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -161,8 +161,21 @@ p {
 a {
 	transition: color 150ms ease-in-out;
 	cursor: pointer;
+	position: relative;
 }
-
+/* automagic external link marker for any target=_blank links */
+a[target="_blank"]:after {
+	content: "";
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='30.37 -109.05 1792 1536'%3E%3Cpath d='M1408 608V288q0-119-84.5-203.5T1120 0H288Q169 0 84.5 84.5T0 288v832q0 119 84.5 203.5T288 1408h704q14 0 23-9t9-23v-64q0-14-9-23t-23-9H288q-66 0-113-47t-47-113V288q0-66 47-113t113-47h832q66 0 113 47t47 113v320q0 14 9 23t23 9h64q14 0 23-9t9-23zm384 864V960q0-26-19-45t-45-19q-26 0-45 19l-176 176-652-652q-10-10-23-10t-23 10L695 553q-10 10-10 23t10 23l652 652-176 176q-19 19-19 45t19 45q19 19 45 19h512q26 0 45-19t19-45z' style='fill:currentColor' transform='matrix(1 0 0 -1 30.372881 1426.9492)'/%3E%3C/svg%3E");
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 1.2rem;
+	top: 50%;
+	height: 1rem;
+	transform: translateY(-50%);
+	right: -1ch;
+}
 /* default buttons */
 button {
 	cursor: pointer;
@@ -527,12 +540,9 @@ SITE FOOTER
 BLOCKS
 ===============================
 */
-/* social icons */
-.rad-social-icons {
-	display: flex;
-}
+
 .rad-social-icons .rad-social-icon {
-	margin: .4rem;
+	
 }
 /* separators */
 .wp-block-separator {
