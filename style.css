@@ -3,15 +3,15 @@ Theme Name: Airfoil
 Author: Kelsey Barmettler
 Author URI: http://kelseybarmettler.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.2.93
+Version: 1.2.94
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: rad
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-GitHub Theme URI: ensignrolaren/radical
-GitHub Theme URI: https://github.com/ensignrolaren/radical
+GitHub Theme URI: ensignrolaren/airfoil
+GitHub Theme URI: https://github.com/ensignrolaren/airfoil
 */
 
 @import url('./css/block-library.css');
