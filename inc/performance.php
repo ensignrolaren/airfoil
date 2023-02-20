@@ -65,6 +65,14 @@ function remove_wp_block_library_css() {
 }
 add_action('wp_print_styles', 'remove_wp_block_library_css', 100);
 
+// no thank you please
+// function disable_classic_theme_styles() {
+// 	wp_deregister_style('classic-theme-styles');
+// 	wp_dequeue_style('classic-theme-styles');
+// }
+// add_filter('wp_enqueue_scripts', 'disable_classic_theme_styles', 100);
+remove_action('wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles');
+
 // dequeue jquery conditionally
 add_action('wp_enqueue_scripts', 'enqueue_if_block_is_not_present');
 function enqueue_if_block_is_not_present() {
