@@ -13,27 +13,90 @@ if ( ! function_exists( 'rad_setup' ) ) :
 		// Enable support for Post Thumbnails on posts and pages
 		add_theme_support( 'post-thumbnails' );
 
+		// Support core custom logo
+		add_theme_support(
+			'custom-logo',
+			array(
+				'flex-width' 	=> true,
+				'flex-height'	=> true,
+			)
+		);
+
+		function airfoil_customize_register($wp_customize) {
+			$wp_customize->add_setting('custom_logo_width', array(
+				'default'			=> '250',
+				'type'				=> 'theme_mod',
+				'capability'		=> 'edit_theme_options',
+				'transport'			=> 'refresh',
+				'sanitize_callback'	=> 'absint', // Ensure value is a positive integer
+			));
+			$wp_customize->add_control('custom_logo_width', array(
+				'label'				=> __('Custom Logo Width', 'airfoil'),
+				'section'			=> 'title_tagline', // ID of the existing custom logo section
+				'settings'			=> 'custom_logo_width',
+				'type'				=> 'number',
+				'input_attrs'		=> array(
+					'min'			=> 0,
+					'step'			=> 1,
+				),
+				'active_callback'	=> function () {
+					return has_custom_logo();
+				},
+			));
+			// Add custom height and width fields to the existing custom logo section
+			$wp_customize->add_setting('custom_logo_height', array(
+				'default'			=> '100',
+				'type'				=> 'theme_mod',
+				'capability'		=> 'edit_theme_options',
+				'transport'			=> 'refresh',
+				'sanitize_callback'	=> 'absint', // Ensure value is a positive integer
+			));
+			$wp_customize->add_control('custom_logo_height', array(
+				'label'				=> __('Custom Logo Height', 'airfoil'),
+				'section'			=> 'title_tagline', // ID of the existing custom logo section
+				'settings'			=> 'custom_logo_height',
+				'type'				=> 'number',
+				'input_attrs'		=> array(
+					'min'			=> 0,
+					'step'			=> 1,
+				),
+				'active_callback'	=> function () {
+					return has_custom_logo();
+				},
+			));
+		}
+		add_action('customize_register', 'airfoil_customize_register');
+
+		// Get the custom logo and set its dimensions manually
 		function rad_site_branding() {
-			if (has_custom_logo()) {
-				the_custom_logo();
-			}
-			if (is_front_page() ) { 
-				echo '<div class="branding-text"><h1 class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">'. get_bloginfo('name') . '</a></h1><p class="site-description">' . get_bloginfo('description') . '</p></div>';
-			} else {
-				echo '<div class="branding-text"><p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p><p class="site-description">' . get_bloginfo('description') . '</p></div>';
-			}
-			if ( ! display_header_text() ) {
-				// nuffin
+			if (function_exists('the_custom_logo')) {
+				$custom_logo_id = get_theme_mod('custom_logo');
+				$custom_logo_url = wp_get_attachment_image_url($custom_logo_id, 'full');
+				$custom_logo_height = get_theme_mod('custom_logo_height');
+				$custom_logo_height = ($custom_logo_height === null) ? '240' : esc_attr($custom_logo_height);
+
+				$custom_logo_width = get_theme_mod('custom_logo_width');
+
+				if ($custom_logo_url) {
+					$custom_logo_dimensions = 'width="' . esc_attr($custom_logo_width) . '" height="' . esc_attr($custom_logo_height) . '"';
+					echo '<img src="' . esc_url($custom_logo_url) . '" alt="' . get_bloginfo('name') . '" ' . $custom_logo_dimensions . '>';
+				}
 			}
 		}
+
+		// Let WordPress manage the document title	.
+		// By adding theme support, we declare that this theme does not use 	a
+		// hard-coded <title> tag in the document head, and expect WordPress to
+		// provide it for us.
+		add_theme_support('title-tag');
 
 		// Register nav menu(s)
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'rad' ),
-				'menu-2' => esc_html__( 'Second', 'rad' ),
-				'menu-3' => esc_html__( 'Third', 'rad' ),
-				'menu-4' => esc_html__( 'Fourth', 'rad' ),
+				'menu-1'	=> esc_html__( 'Primary', 'rad' ),
+				'menu-2'	=> esc_html__( 'Second', 'rad' ),
+				'menu-3'	=> esc_html__( 'Third', 'rad' ),
+				'menu-4'	=> esc_html__( 'Fourth', 'rad' ),
 			)
 		);
 
@@ -54,50 +117,50 @@ if ( ! function_exists( 'rad_setup' ) ) :
 		// Support custom font sizes
 		add_theme_support('editor-font-sizes', array(
 			array(
-				'name' => esc_attr__('Small', 'rad'),
-				'size' => 12,
-				'slug' => 'small'
+				'name'	=> esc_attr__('Small', 'rad'),
+				'size'	=> 12,
+				'slug'	=> 'small'
 			),
 			array(
-				'name' => esc_attr__('Regular', 'rad'),
-				'size' => 16,
-				'slug' => 'regular'
+				'name'	=> esc_attr__('Regular', 'rad'),
+				'size'	=> 16,
+				'slug'	=> 'regular'
 			),
 			array(
-				'name' => esc_attr__('Extra Regular', 'rad'),
-				'size' => 22,
-				'slug' => 'extra-regular'
+				'name'	=> esc_attr__('Extra Regular', 'rad'),
+				'size'	=> 22,
+				'slug'	=> 'extra-regular'
 			),
 			array(
-				'name' => esc_attr__('Medium', 'rad'),
-				'size' => 26,
-				'slug' => 'medium'
+				'name'	=> esc_attr__('Medium', 'rad'),
+				'size'	=> 26,
+				'slug'	=> 'medium'
 			),
 			array(
-				'name' => esc_attr__('Extra Medium', 'rad'),
-				'size' => 31,
-				'slug' => 'extra-medium'
+				'name'	=> esc_attr__('Extra Medium', 'rad'),
+				'size'	=> 31,
+				'slug'	=> 'extra-medium'
 			),
 			array(
-				'name' => esc_attr__('Large', 'rad'),
-				'size' => 40,
-				'slug' => 'large'
+				'name'	=> esc_attr__('Large', 'rad'),
+				'size'	=> 40,
+				'slug'	=> 'large'
 			),
 
 			array(
-				'name' => esc_attr__('Extra Large', 'rad'),
-				'size' => 50,
-				'slug' => 'x-large'
+				'name'	=> esc_attr__('Extra Large', 'rad'),
+				'size'	=> 50,
+				'slug'	=> 'x-large'
 			),
 			array(
-				'name' => esc_attr__('Huge', 'rad'),
-				'size' => 60,
-				'slug' => 'huge'
+				'name'	=> esc_attr__('Huge', 'rad'),
+				'size'	=> 60,
+				'slug'	=> 'huge'
 			),
 			array(
-				'name' => esc_attr__('Big McLargeHuge', 'rad'),
-				'size' => 72,
-				'slug' => 'big-mclargehuge'
+				'name'	=> esc_attr__('Big McLargeHuge', 'rad'),
+				'size'	=> 72,
+				'slug'	=> 'big-mclargehuge'
 			)
 		));
 
@@ -121,17 +184,6 @@ if ( ! function_exists( 'rad_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		// Support core custom logo
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 350,
-				'width'       => 350,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
 
 		// support wide and full alignments
 		add_theme_support('align-wide');
@@ -173,7 +225,7 @@ add_action( 'after_setup_theme', 'rad_setup' );
 // let's call this 'lowercase_p_dangit'...
 // wordpress really shouldn't silently edit user content
 // this is really basic, obvious stuff, matt.
-// I cannot believe I have to add this to prevent my own $%$%&$ software from secretly editing my content 
+// I cannot believe I have to add this to prevent my own 🤬 software from secretly editing my content 
 remove_filter( 'the_title', 'capital_P_dangit', 11 );
 remove_filter( 'the_content', 'capital_P_dangit', 11 );
 remove_filter( 'comment_text', 'capital_P_dangit', 31 );
