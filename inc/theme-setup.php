@@ -79,7 +79,7 @@ if ( ! function_exists( 'rad_setup' ) ) :
 
 				if ($custom_logo_url) {
 					$custom_logo_dimensions = 'width="' . esc_attr($custom_logo_width) . '" height="' . esc_attr($custom_logo_height) . '"';
-					echo '<img src="' . esc_url($custom_logo_url) . '" alt="' . get_bloginfo('name') . '" ' . $custom_logo_dimensions . '>';
+					echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img src="' . esc_url($custom_logo_url) . '" alt="' . get_bloginfo('name') . '" ' . $custom_logo_dimensions . '></a>';
 				}
 			}
 		}

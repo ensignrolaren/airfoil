@@ -42,18 +42,18 @@ function wpex_youtube_nocookie_oembed($return) {
 add_filter('oembed_dataparse', 'wpex_youtube_nocookie_oembed');
 
 // Remove jQuery migrate
-function remove_jquery_migrate($cripts) {
-	if (!is_admin() && isset($cripts->registered['jquery'])) {
-		$cript = $cripts->registered['jquery'];
-		if ($cript->deps) {
-			$cript->deps = array_diff($cript->deps, array('jquery-migrate'));
+function remove_jquery_migrate($scripts) {
+	if (!is_admin() && isset($scripts->registered['jquery'])) {
+		$script = $scripts->registered['jquery'];
+		if ($script->deps) {
+			$script->deps = array_diff($script->deps, array('jquery-migrate'));
 		}
 	}
 }
 add_action('wp_default_scripts', 'remove_jquery_migrate');
 
 // don't load the whole core block stylesheet on every page
-add_filter('should_load_separate_core_block_assets', '__return_true');
+// add_filter('should_load_separate_core_block_assets', '__return_true');
 
 // stay cool bro i add this back in the parent stylesheet
 // Remove Gutenberg Block Library CSS from loading on the frontend
@@ -65,27 +65,17 @@ function remove_wp_block_library_css() {
 }
 add_action('wp_print_styles', 'remove_wp_block_library_css', 100);
 
-// no thank you please
-// function disable_classic_theme_styles() {
-// 	wp_deregister_style('classic-theme-styles');
-// 	wp_dequeue_style('classic-theme-styles');
-// }
-// add_filter('wp_enqueue_scripts', 'disable_classic_theme_styles', 100);
+// no thank you please classic theme styles
 remove_action('wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles');
 
-// dequeue jquery conditionally
-add_action('wp_enqueue_scripts', 'enqueue_if_block_is_not_present');
-function enqueue_if_block_is_not_present() {
-	// if we are not in the back end
-	if (!is_admin()) {
-		$id = get_the_ID();
-		// and also if there's not HF or carousel and there's no woocommerce or Query Monitor
-		if (!has_block('thethemefoundry/happyforms', $id) && !has_block('rad/carousel', $id) && !class_exists('WooCommerce') && !class_exists('QueryMonitor')) {
-			wp_dequeue_script('jquery');
-			wp_deregister_script('jquery');
-		}
+function conditionally_enqueue_jquery() {
+	$id = get_the_ID();
+	if (has_block('thethemefoundry/happyforms', $id) || has_block('rad/carousel', $id) || class_exists('Woocommerce') || class_exists('QueryMonitor')) {
+		wp_enqueue_script('jquery');
 	}
 }
+add_action('wp_enqueue_scripts', 'conditionally_enqueue_jquery');
+
 
 // Conditionally skip lazy loading by checking for a class
 function skip_lazy_load($value, $image, $context) {

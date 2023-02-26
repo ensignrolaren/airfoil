@@ -41,7 +41,6 @@
 				<div class="site-header__inner-container">
 					<div class="site-branding">
 						<?php rad_site_branding(); ?>
-						<?php //themename_custom_logo_setup(); ?>
 					</div><!-- .site-branding -->
 
 					<nav id="site-navigation" class="main-navigation">

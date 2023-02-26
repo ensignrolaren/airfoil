@@ -37,11 +37,6 @@ require get_template_directory() . '/inc/custom-header.php';
 // Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
 
-// remove this later
-if (!is_plugin_active('radical-blocks/blocks.php')) {
-	require_once get_template_directory() . '/custom-blocks/blocks.php';
-}
-
 // Check if happyforms is active
 if (class_exists('Happyforms')) {
 	// if active, load happyforms functions 
