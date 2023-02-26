@@ -20,6 +20,14 @@ wp.domReady( () => {
 				name: 'no-padding',
 				label: 'No Padding',
 			},
+			{
+				name: 'constrained',
+				label: 'Constrained',
+			},
+			{
+				name: 'full-width',
+				label: 'Full width',
+			},
 		]
 	);
 	// Add Custom Separator
