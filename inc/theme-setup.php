@@ -81,6 +81,13 @@ if ( ! function_exists( 'rad_setup' ) ) :
 					$custom_logo_dimensions = 'width="' . esc_attr($custom_logo_width) . '" height="' . esc_attr($custom_logo_height) . '"';
 					echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img src="' . esc_url($custom_logo_url) . '" alt="' . get_bloginfo('name') . '" ' . $custom_logo_dimensions . '></a>';
 				}
+				// display the appropriate site title and tagline markup if that option is set
+				if (is_front_page() && display_header_text()) {
+					echo '<div class="branding-text"><h1 class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></h1><p class="site-description">' . get_bloginfo('description') . '</p></div>';
+				}
+				elseif (!is_front_page() && display_header_text()) {
+					echo '<div class="branding-text"><p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p><p class="site-description">' . get_bloginfo('description') . '</p></div>';
+				}
 			}
 		}
 
