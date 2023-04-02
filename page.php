@@ -15,13 +15,7 @@
 
 get_header();
 ?>
-<?php
-$has_sidebar = get_post_meta(get_the_ID(), 'show_page_sidebar', true);
-if ($has_sidebar == 1) :
-	echo '<div class="sidebar-wrapper">';
-	echo '<div class="sidebar-wrapper__inner-container">';
-endif;
-?>
+
 <main id="primary" class="site-main">
 
 	<?php
@@ -41,9 +35,4 @@ endif;
 </main><!-- #main -->
 
 <?php
-if ($has_sidebar == 1) :
-	get_sidebar();
-	echo '</div>';
-	echo '</div>';
-endif;
 get_footer();

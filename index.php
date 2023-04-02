@@ -16,15 +16,15 @@
 get_header();
 ?>
 <?php
-if (class_exists('ACF')) {
-	$has_sidebar = get_field('show_sidebar_on_all_posts', 'option');
-} else {
-	$has_sidebar = 0;
-}
-if ($has_sidebar == 1) :
-	echo '<div class="sidebar-wrapper">';
-	echo '<div class="sidebar-wrapper__inner-container">';
-endif;
+// if (class_exists('ACF')) {
+// 	$has_sidebar = get_field('show_sidebar_on_all_posts', 'option');
+// } else {
+// 	$has_sidebar = 0;
+// }
+// if ($has_sidebar == 1) :
+// 	echo '<div class="sidebar-wrapper">';
+// 	echo '<div class="sidebar-wrapper__inner-container">';
+// endif;
 ?>
 <main id="primary" class="site-main">
 
@@ -64,9 +64,9 @@ endif;
 </main><!-- #main -->
 
 <?php
-if ($has_sidebar == 1) :
-	get_sidebar();
-	echo '</div>';
-	echo '</div>';
-endif;
+// if ($has_sidebar == 1) :
+// 	get_sidebar();
+// 	echo '</div>';
+// 	echo '</div>';
+// endif;
 get_footer();

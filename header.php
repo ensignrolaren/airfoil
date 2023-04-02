@@ -58,3 +58,32 @@
 				</div>
 			</header>
 		</div><!-- #masthead -->
+		<?php
+		// check if ACF is loaded (if not, let's just set the sidebar to not show)
+		if (!class_exists('ACF')) {
+			$has_sidebar = 0;
+		} else {
+			// check if we're on a post page
+			if (is_archive() || is_single() || is_home() || is_404() || is_search()) {
+				// check the site options page to see if we want all post pages to have sidebars
+				$has_sidebar = get_field('show_sidebar_on_all_posts', 'option');
+				// if we want the sidebar to show on all posts, do that
+				if ($has_sidebar == 1) :
+					echo '<div class="sidebar-wrapper">';
+					echo '<div class="sidebar-wrapper__inner-container">';
+					get_sidebar();
+				endif;
+				// check if we're on a static page
+			} elseif (is_page()) {
+				global $post;
+				// check the page options for if this page should have a sidebar
+				$has_sidebar = get_field('show_page_sidebar', $post->ID);
+				// if we want the sidebar to show on this particular page, do that
+				if ($has_sidebar == 1) :
+					echo '<div class="sidebar-wrapper">';
+					echo '<div class="sidebar-wrapper__inner-container">';
+					get_sidebar();
+				endif;
+			}
+		}
+		?>
