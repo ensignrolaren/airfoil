@@ -167,8 +167,11 @@ a {
 button {
 	cursor: pointer;
 }
-.wp-block-buttons {
+.wp-block-button {
 	margin-bottom: 1em;
+}
+.wp-block-button.has-custom-width a {
+	display: inherit;
 }
 .wp-block-button.is-style-alternate>.wp-block-button__link,
 .wp-block-button .wp-block-button__link.is-style-alternate {
@@ -375,6 +378,7 @@ body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alig
 }
 .wp-block-group__inner-container :last-child,
 .acf-innerblocks-container :last-child {
+
 	margin-bottom: 0;
 }
 /* floats */

@@ -13,6 +13,12 @@ function rad_acf_options_page() {
 				'parent'     => 'edit.php',
 				'capability' => 'manage_options',
 			));
+			acf_add_options_sub_page(array(
+				'page_title' => __('Woo Options'),
+				'menu_title' => __('Options'),
+				'menu_slug' => 'options',
+				'parent_slug' => 'woocommerce',
+			));
 		}
 	}
 }

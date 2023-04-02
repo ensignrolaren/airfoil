@@ -111,3 +111,23 @@ function moonframe_move_price() {
 	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
 }
 add_action( 'woocommerce_single_product_summary', 'moonframe_move_price', 1 );
+
+// show or hide sidebar based on options page under woocommerce menu
+// add_action('woocommerce_before_main_content', 'show_sidebar_open', 10);
+// function show_sidebar_open() {
+// 	if ( get_field( 'show_sidebar_woocommerce', 'option' ) == 1 ) :
+// 		echo '<div class="sidebar-wrapper">';
+// 		echo '<div class="sidebar-wrapper__inner-container">';
+// 	else :
+// 		// echo 'false';
+// 	endif;
+// }
+// add_action('woocommerce_after_main_content', 'show_sidebar_close', 10);
+// function show_sidebar_close() {
+// 	if (get_field('show_sidebar_woocommerce', 'option') == 1) :
+// 		echo '</div>';
+// 		echo '</div>';
+// 	else :
+// 	// echo 'false';
+// 	endif;
+// }
