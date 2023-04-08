@@ -55,8 +55,16 @@ header('Cache-control: must-revalidate');
 		z-index: 9999;
 		-webkit-box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
 		box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
-		border-bottom: 4px solid #111c35;
+		/* border-bottom: 4px solid #111c35; */
 		margin: 0;
+	}
+	.main-navigation .sub-menu .menu-item {
+		border-left: 4px solid transparent;
+		transition: border 250ms ease-in-out, background-color 250ms ease-in-out;
+	}
+	.main-navigation .sub-menu .menu-item:hover {
+		border-left: 4px solid #000;
+		background-color: aliceblue;
 	}
 	.main-navigation .menu-item-has-children:hover .sub-menu {
 		display: block;
