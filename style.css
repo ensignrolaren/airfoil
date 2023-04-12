@@ -3,7 +3,7 @@ Theme Name: Airfoil
 Author: Kelsey Barmettler
 Author URI: http://kelseybarmettler.com
 Description: A parent theme that provides a starting point for a totally rad website.
-Version: 1.2.103
+Version: 1.2.104
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -200,6 +200,10 @@ a.wp-block-button__link {
 }
 .wp-block-button.aligncenter {
 	text-align: center;
+}
+.wp-block-gallery {
+	display: flex;
+	flex-wrap: wrap;
 }
 /* lists */
 .site-main ul,
