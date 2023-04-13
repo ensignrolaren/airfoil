@@ -207,7 +207,6 @@ ul.wp-block-rss.alignright {
 .wp-block-column {
 	flex-grow: 1;
 	min-width: 0;
-	overflow-wrap: break-word;
 }
 .wp-block-column.is-vertically-aligned-top,
 .wp-block-gallery:not(.is-cropped) .blocks-gallery-item {
@@ -1087,7 +1086,6 @@ ol.wp-block-latest-comments {
 	grid-column: 2;
 	grid-row: 1; /*!rtl:end:ignore*/
 	padding: 0 8%;
-	word-break: break-word;
 }
 .wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
 	/*!rtl:begin:ignore*/
