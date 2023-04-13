@@ -10,19 +10,6 @@
 .wp-block-video.aligncenter {
 	text-align: center;
 }
-.wp-block-button__link,
-.wp-block-column,
-.wp-block-post-title,
-.wp-block-table .has-fixed-layout td,
-.wp-block-table .has-fixed-layout th,
-.wp-block-table.aligncenter td,
-.wp-block-table.aligncenter th,
-.wp-block-table.alignleft td,
-.wp-block-table.alignleft th,
-.wp-block-table.alignright td,
-.wp-block-table.alignright th {
-	word-break: break-word;
-}
 .wp-block-code code,
 .wp-block-post-terms__separator,
 .wp-block-preformatted,
@@ -45,19 +32,6 @@ pre.wp-block-verse {
 	width: 100%;
 	min-width: 300px;
 }
-/* .wp-block-button__link {
-	color: #fff;
-	background-color: #32373c;
-	border-radius: 9999px;
-	box-shadow: none;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 1.125em;
-	padding: calc(0.667em + 2px) calc(1.333em + 2px);
-	text-align: center;
-	text-decoration: none;
-	box-sizing: border-box;
-} */
 .wp-block-button__link:active,
 .wp-block-button__link:focus,
 .wp-block-button__link:hover,
