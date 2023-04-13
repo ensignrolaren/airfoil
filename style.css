@@ -473,7 +473,6 @@ site navigation
 .main-navigation {
 	display: flex;
 	justify-content: flex-end;
-	font-weight: bold;
 }
 .main-navigation > ul {
 	list-style-type: none;
