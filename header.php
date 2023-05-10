@@ -62,7 +62,7 @@
 
 		// if there's a custom post header, show it here
 		if (class_exists('ACF')) {
-			if (get_field('custom_blog_header', 'option') == 1) {
+			if (get_field('custom_blog_header', 'option') == 1 && is_archive() || is_single()) {
 				dynamic_sidebar('blog-header');
 			}
 		}
