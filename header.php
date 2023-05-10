@@ -59,8 +59,17 @@
 			</header>
 		</div><!-- #masthead -->
 		<?php
-		// check if ACF is loaded (if not, let's just set the sidebar to not show)
+
+		// if there's a custom post header, show it here
+		if (class_exists('ACF')) {
+			if (get_field('custom_blog_header', 'option') == 1) {
+				dynamic_sidebar('blog-header');
+			}
+		}
+			
+		// check if ACF is loaded
 		if (!class_exists('ACF')) {
+			// if ACF isn't loaded, hide the sidebar
 			$has_sidebar = 0;
 		} else {
 			// check if we're on a post page
