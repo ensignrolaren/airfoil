@@ -334,6 +334,20 @@ body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alig
 	margin-left: auto;
 	margin-right: auto;
 }
+/* set width for woocommerce single and archive page content */
+:not(.has-sidebar) > .content-area > .site-main {
+	max-width: var(--normal-width, 960px) !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+:not(.has-sidebar) > .content-area > .site-main > * {
+	margin-left: calc(25% - 25vw) !important;
+	margin-right: calc(25% - 25vw) !important;
+}
+.woocommerce .products ul, .woocommerce ul.products {
+	padding: 0 var(--padding);
+}
+
 /* allow full-width child elements to break out and run edge-to-edge */
 .alignfull {
 	width: 100vw !important;
