@@ -2,7 +2,7 @@
 /**
  * Content wrappers
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/global/wrapper-end.php.
+ * The only edit I've made here is on line 50, removing the extra <div> with the class of content-area
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
