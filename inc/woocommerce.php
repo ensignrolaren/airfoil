@@ -133,6 +133,11 @@ function woo_frontend_assets() {
 }
 add_action('wp_enqueue_scripts', 'woo_frontend_assets', 100);
 
+// Load my custom WooCommerce styles (back end)
+function woo_back_end_assets() {
+	wp_enqueue_style('woo-styles', get_template_directory_uri() . '/css/woocommerce.css');
+}
+add_action('admin_head', 'woo_back_end_assets');
 // show or hide sidebar based on options page under woocommerce menu
 // add_action('woocommerce_before_main_content', 'show_sidebar_open', 10);
 // function show_sidebar_open() {

@@ -35,13 +35,13 @@ function rad_defer_scripts($tag, $handle, $src) {
 }
 add_filter('script_loader_tag', 'rad_defer_scripts', 10, 3);
 
-// Enqueue scripts and styles for admin
+// Enqueue scripts and styles for back end
 function rad_admin_assets() {
 	wp_enqueue_style('rad-custom', get_template_directory_uri() . '/css/block-editor.css');
 }
 add_action('admin_head', 'rad_admin_assets');
 
-// Enqueue back end assets
+// Enqueue block editor assets
 function rad_block_editor_scripts() {
 	wp_enqueue_script('theme-editor', get_template_directory_uri() . '/js/editor.js', array('wp-blocks', 'wp-dom'), filemtime(get_template_directory() . '/js/editor.js'), true);
 }

@@ -1,7 +1,26 @@
 ul.products {
 	display: flex;
+	flex-wrap: wrap;
 	margin: 0 !important;
 	list-style-type: none;
 	column-gap: 1rem;
 	row-gap: 1rem;
+}
+ul.products a {
+	pointer-events: none;
+}
+ul.products.columns-3 .product {
+	flex: 1 1 calc(33.333% - 1rem);
+}
+ul.products.columns-4 .product {
+	flex: 1 1 calc(25% - 1rem);
+}
+ul.products.columns-5 .product {
+	flex: 1 1 calc(20% - 1rem);
+}
+ul.products.columns-6 .product {
+	flex: 1 1 calc(16.66666667% - 1rem);
+}
+ul.products .product .product-title {
+	font-size: 1.2rem;
 }
