@@ -41,7 +41,7 @@ function rad_admin_assets() {
 }
 add_action('admin_head', 'rad_admin_assets');
 
-// Enqueue block editor assets
+// Enqueue back end assets
 function rad_block_editor_scripts() {
 	wp_enqueue_script('theme-editor', get_template_directory_uri() . '/js/editor.js', array('wp-blocks', 'wp-dom'), filemtime(get_template_directory() . '/js/editor.js'), true);
 }
