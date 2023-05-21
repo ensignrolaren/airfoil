@@ -344,9 +344,6 @@ body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alig
 	margin-left: calc(25% - 25vw) !important;
 	margin-right: calc(25% - 25vw) !important;
 }
-.woocommerce .products ul, .woocommerce ul.products {
-	padding: 0 var(--padding);
-}
 
 /* allow full-width child elements to break out and run edge-to-edge */
 .alignfull {
