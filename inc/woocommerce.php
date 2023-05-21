@@ -112,6 +112,9 @@ function moonframe_move_price() {
 }
 add_action( 'woocommerce_single_product_summary', 'moonframe_move_price', 1 );
 
+// Remove woocommerce front end styles
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
 // show or hide sidebar based on options page under woocommerce menu
 // add_action('woocommerce_before_main_content', 'show_sidebar_open', 10);
 // function show_sidebar_open() {
