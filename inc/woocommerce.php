@@ -133,7 +133,7 @@ function woo_frontend_assets() {
 }
 add_action('wp_enqueue_scripts', 'woo_frontend_assets', 100);
 
-// Load my custom WooCommerce styles (back end)
+// Load my custom WooCommerce styles (front end)
 function woo_back_end_assets() {
 	wp_enqueue_style('woo-styles', get_template_directory_uri() . '/css/woocommerce.css');
 }
