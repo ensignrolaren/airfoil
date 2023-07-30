@@ -1,5 +1,17 @@
 /*
 +++++++++++++++++++
+widgets
++++++++++++++++++++
+*/
+html .wp-block[data-type="core/widget-area"] {
+	max-width: calc(100% - 2rem);
+	margin: 1rem auto;
+}
+.blocks-widgets-container .editor-styles-wrapper {
+	max-width: unset;	
+}
+/*
++++++++++++++++++++
 type
 +++++++++++++++++++
 */
@@ -125,7 +137,7 @@ GLOBAL
 }
 /* Main column width */
 .wp-block {
-	max-width: 800px;
+	max-width: unset;
 }
 
 /* Width of "wide" blocks */

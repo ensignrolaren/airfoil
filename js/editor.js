@@ -102,6 +102,17 @@ wp.domReady( () => {
 			label: 'Alternate',
 		}
 	]);
+	wp.blocks.registerBlockStyle( 'core/buttons', [ 
+		{
+			name: 'inline',
+			label: 'Inline',
+			isDefault: true,
+		},
+		{
+			name: 'stacked',
+			label: 'Stacked',
+		}
+	]);
 	// Custom Media & Text
 	wp.blocks.registerBlockStyle( 'core/media-text', [ 
 		{
