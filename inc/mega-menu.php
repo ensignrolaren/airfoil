@@ -13,7 +13,7 @@
 				'archives'              => __('All Mega Menus', 'text_domain'),
 				'attributes'            => __('Mega Menu Attributes', 'text_domain'),
 				'parent_item_colon'     => __('Parent Mega Menu:', 'text_domain'),
-				'all_items'             => __('All Mega Menus', 'text_domain'),
+				'all_items'             => __('Mega Menus', 'text_domain'),
 				'add_new_item'          => __('Add New Mega Menus', 'text_domain'),
 				'add_new'               => __('Add New', 'text_domain'),
 				'new_item'              => __('New Item', 'text_domain'),
@@ -43,7 +43,8 @@
 				'hierarchical'          => false,
 				'public'                => true,
 				'show_ui'               => true,
-				'show_in_menu'          => true,
+				// 'show_in_menu'          => true,
+				'show_in_menu'			=> 'themes.php', // Set to 'themes.php' to place it under Appearance
 				'menu_position'         => 5,
 				'show_in_admin_bar'     => true,
 				'show_in_nav_menus'     => true,
