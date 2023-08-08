@@ -1,5 +1,25 @@
 /*
 +++++++++++++++++++
+ mega menu
++++++++++++++++++++
+*/
+/* tidy up the mega menu true/false options by hiding redundant info */
+.acf-field-647150f102094 > .acf-label {
+	display: none;
+	font-style: normal;
+}
+.acf-field-647150f102094 .acf-fields .acf-label  label {
+	font-style: normal !important;
+}
+.acf-field-647150f102094 .acf-fields {
+	border: 0 !important;
+}
+.acf-field-647150f102094 .acf-fields .acf-field-true-false {
+	padding: 0 !important;
+	margin-bottom: .5rem;
+}
+/*
++++++++++++++++++++
 widgets
 +++++++++++++++++++
 */

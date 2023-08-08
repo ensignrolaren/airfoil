@@ -172,8 +172,17 @@ button {
 	flex-wrap: wrap;
 	gap: 0.5rem;
 }
+.wp-block-columns + .wp-block-buttons,
+.wp-block-group + .wp-block-buttons,
+.wp-block-separator + .wp-block-buttons {
+	margin-top: 1em;
+}
 .wp-block-buttons.is-style-stacked {
 	flex-direction: column
+}
+.wp-block-buttons .has-custom-width.wp-block-button__width-50 {
+	flex: 1 1 50%;
+	max-width: 50%;
 }
 .wp-block-button {
 	margin-bottom: 1em;
