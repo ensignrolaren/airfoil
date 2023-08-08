@@ -72,3 +72,6 @@ if (class_exists('Woocommerce')) {
 	// if active, load Woocommerce functions
 	require_once get_template_directory() . '/inc/woocommerce.php';
 }
+
+// Add shortcodes
+require get_template_directory() . '/inc/mega-menu.php';
