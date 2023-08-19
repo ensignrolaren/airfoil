@@ -1,4 +1,6 @@
-<?php if (get_field('enable_mega_menu', 'option') == 1) : ?>
+<?php
+// If mega menu is enabled, register that custom post type
+if (get_field('enable_mega_menu', 'option') == 1) : ?>
 	<?php // echo 'true';
 	if (!function_exists('mega_menu')) {
 
