@@ -14,7 +14,7 @@
 	<?php
 	// if it's an archive page
 	if (!is_singular()) {
-		the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+		the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" ' . (get_field('open_posts_in_new_tab', 'option') == 1 ? 'target="_blank" rel="noreferrer"' : '') . '>', '</a></h2>');
 	} elseif (class_exists('ACF') && get_field('custom_blog_header', 'option') == 1) {
 		// nothing
 	} elseif (class_exists('ACF') && get_field('custom_blog_header', 'option') == 0 || !class_exists('ACF')) { ?>
